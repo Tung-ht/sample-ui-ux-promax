@@ -1,0 +1,16 @@
+Phát triển website cho một công ty phát triển web có tên là "EZpage":
+Các tính năng chính:
+- Thanh điều hướng cố định với các liên kết đến Dịch vụ, Bảng giá và Liên hệ.
+- Phần bảng giá với ba thẻ, mỗi thẻ nêu bật các tính năng khác nhau và các mức giá hợp lý.
+- Biểu mẫu "Yêu cầu báo giá" tương tác bao gồm các trường: Tên, Email, Loại website (menu thả xuống) và Yêu cầu chi tiết (ô văn bản).
+- Đảm bảo thiết kế ưu tiên thiết bị di động, hiện đại, hấp dẫn, màu sắc bắt mắt và sử dụng kiểu chữ hiện đại, thân thiện với tiếng Việt.
+- Thêm phần "Khách hàng tiềm năng" để tăng độ tin cậy.
+- Sử dụng các icon, hình ảnh minh họa ở vị trí hợp lý.
+- Có thêm phần minh họa các sản phẩm đã phát triển của công ty. Dưới đây là 1 số link sản phẩm minh họa, hãy sử dụng các link này dưới dạng preivew:
+https://ui-ux-pro-max-skill.nextlevelbuilder.io/demo/saas-analytics-dashboard
+https://ui-ux-pro-max-skill.nextlevelbuilder.io/demo/educational-platform
+https://ui-ux-pro-max-skill.nextlevelbuilder.io/demo/pet-grooming
+https://ui-ux-pro-max-skill.nextlevelbuilder.io/demo/ai-chatbot-platform
+https://ui-ux-pro-max-skill.nextlevelbuilder.io/demo/luxury-ecommerce
+https://ui-ux-pro-max-skill.nextlevelbuilder.io/demo/fintech-crypto
+- Website hỗ trợ hai ngôn ngữ: tiếng Anh và tiếng Việt.

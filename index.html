@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EZpage - Giải Pháp Website Chuyên Nghiệp</title>
+    <meta name="description" content="EZpage - Công ty phát triển website chuyên nghiệp, giá cả hợp lý, thiết kế hiện đại">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="container nav-container">
+            <div class="logo">
+                <i class="fas fa-code"></i>
+                <span>EZ<span class="highlight">page</span></span>
+            </div>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#home" class="nav-link" data-en="Home" data-vi="Trang chủ">Trang chủ</a></li>
+                <li><a href="#services" class="nav-link" data-en="Services" data-vi="Dịch vụ">Dịch vụ</a></li>
+                <li><a href="#portfolio" class="nav-link" data-en="Portfolio" data-vi="Dự án">Dự án</a></li>
+                <li><a href="#pricing" class="nav-link" data-en="Pricing" data-vi="Bảng giá">Bảng giá</a></li>
+                <li><a href="#contact" class="nav-link" data-en="Contact" data-vi="Liên hệ">Liên hệ</a></li>
+                <li class="language-switcher">
+                    <button class="lang-btn" id="langToggle">
+                        <i class="fas fa-globe"></i>
+                        <span id="currentLang">VI</span>
+                    </button>
+                </li>
+            </ul>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1 class="hero-title" data-en="Professional Website Solutions for Your Business" data-vi="Giải Pháp Website Chuyên Nghiệp Cho Doanh Nghiệp">
+                        Giải Pháp Website Chuyên Nghiệp Cho Doanh Nghiệp
+                    </h1>
+                    <p class="hero-subtitle" data-en="We create modern, responsive websites that help your business grow online. Fast delivery, reasonable prices, and outstanding quality." data-vi="Chúng tôi tạo ra các website hiện đại, responsive giúp doanh nghiệp phát triển trực tuyến. Giao hàng nhanh, giá cả hợp lý, chất lượng xuất sắc.">
+                        Chúng tôi tạo ra các website hiện đại, responsive giúp doanh nghiệp phát triển trực tuyến. Giao hàng nhanh, giá cả hợp lý, chất lượng xuất sắc.
+                    </p>
+                    <div class="hero-buttons">
+                        <a href="#contact" class="btn btn-primary" data-en="Get Started" data-vi="Bắt đầu ngay">Bắt đầu ngay</a>
+                        <a href="#portfolio" class="btn btn-secondary" data-en="View Portfolio" data-vi="Xem dự án">Xem dự án</a>
+                    </div>
+                    <div class="hero-stats">
+                        <div class="stat">
+                            <i class="fas fa-check-circle"></i>
+                            <span data-en="200+ Projects" data-vi="200+ Dự án">200+ Dự án</span>
+                        </div>
+                        <div class="stat">
+                            <i class="fas fa-users"></i>
+                            <span data-en="150+ Happy Clients" data-vi="150+ Khách hàng">150+ Khách hàng</span>
+                        </div>
+                        <div class="stat">
+                            <i class="fas fa-star"></i>
+                            <span data-en="5-Star Rating" data-vi="Đánh giá 5 sao">Đánh giá 5 sao</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <div class="floating-card card-1">
+                        <i class="fas fa-laptop-code"></i>
+                        <span data-en="Responsive Design" data-vi="Thiết kế Responsive">Thiết kế Responsive</span>
+                    </div>
+                    <div class="floating-card card-2">
+                        <i class="fas fa-rocket"></i>
+                        <span data-en="Fast Loading" data-vi="Tải Nhanh">Tải Nhanh</span>
+                    </div>
+                    <div class="floating-card card-3">
+                        <i class="fas fa-shield-alt"></i>
+                        <span data-en="Secure" data-vi="Bảo Mật">Bảo Mật</span>
+                    </div>
+                    <div class="hero-illustration">
+                        <i class="fas fa-desktop"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title" data-en="Our Services" data-vi="Dịch Vụ Của Chúng Tôi">Dịch Vụ Của Chúng Tôi</h2>
+                <p class="section-subtitle" data-en="We offer comprehensive web development solutions tailored to your needs" data-vi="Chúng tôi cung cấp giải pháp phát triển web toàn diện phù hợp với nhu cầu của bạn">
+                    Chúng tôi cung cấp giải pháp phát triển web toàn diện phù hợp với nhu cầu của bạn
+                </p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-paint-brush"></i>
+                    </div>
+                    <h3 data-en="Web Design" data-vi="Thiết Kế Web">Thiết Kế Web</h3>
+                    <p data-en="Modern, attractive UI/UX design that captivates your visitors and enhances user experience" data-vi="Thiết kế UI/UX hiện đại, hấp dẫn thu hút khách hàng và nâng cao trải nghiệm người dùng">
+                        Thiết kế UI/UX hiện đại, hấp dẫn thu hút khách hàng và nâng cao trải nghiệm người dùng
+                    </p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h3 data-en="Web Development" data-vi="Phát Triển Web">Phát Triển Web</h3>
+                    <p data-en="Professional coding with latest technologies, optimized for performance and SEO" data-vi="Lập trình chuyên nghiệp với công nghệ mới nhất, tối ưu hiệu suất và SEO">
+                        Lập trình chuyên nghiệp với công nghệ mới nhất, tối ưu hiệu suất và SEO
+                    </p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h3 data-en="Mobile Responsive" data-vi="Responsive Mobile">Responsive Mobile</h3>
+                    <p data-en="Perfect display on all devices - desktop, tablet, and mobile phones" data-vi="Hiển thị hoàn hảo trên mọi thiết bị - desktop, tablet và điện thoại">
+                        Hiển thị hoàn hảo trên mọi thiết bị - desktop, tablet và điện thoại
+                    </p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-shopping-cart"></i>
+                    </div>
+                    <h3 data-en="E-Commerce" data-vi="Website Thương Mại">Website Thương Mại</h3>
+                    <p data-en="Complete online store with payment integration and inventory management" data-vi="Cửa hàng trực tuyến hoàn chỉnh với tích hợp thanh toán và quản lý kho">
+                        Cửa hàng trực tuyến hoàn chỉnh với tích hợp thanh toán và quản lý kho
+                    </p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <h3 data-en="SEO Optimization" data-vi="Tối Ưu SEO">Tối Ưu SEO</h3>
+                    <p data-en="Improve search rankings to help customers easily find your business" data-vi="Cải thiện thứ hạng tìm kiếm giúp khách hàng dễ dàng tìm thấy doanh nghiệp">
+                        Cải thiện thứ hạng tìm kiếm giúp khách hàng dễ dàng tìm thấy doanh nghiệp
+                    </p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-headset"></i>
+                    </div>
+                    <h3 data-en="Support & Maintenance" data-vi="Hỗ Trợ & Bảo Trì">Hỗ Trợ & Bảo Trì</h3>
+                    <p data-en="24/7 technical support and regular maintenance to ensure smooth operation" data-vi="Hỗ trợ kỹ thuật 24/7 và bảo trì định kỳ đảm bảo hoạt động ổn định">
+                        Hỗ trợ kỹ thuật 24/7 và bảo trì định kỳ đảm bảo hoạt động ổn định
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="portfolio">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title" data-en="Our Portfolio" data-vi="Dự Án Của Chúng Tôi">Dự Án Của Chúng Tôi</h2>
+                <p class="section-subtitle" data-en="Explore our recent projects and see the quality of our work" data-vi="Khám phá các dự án gần đây và thấy chất lượng công việc của chúng tôi">
+                    Khám phá các dự án gần đây và thấy chất lượng công việc của chúng tôi
+                </p>
+            </div>
+            <div class="portfolio-grid">
+                <div class="portfolio-item">
+                    <div class="portfolio-preview">
+                        <iframe src="https://ui-ux-pro-max-skill.nextlevelbuilder.io/demo/saas-analytics-dashboard" loading="lazy"></iframe>
+                        <div class="portfolio-overlay">
+                            <a href="https://ui-ux-pro-max-skill.nextlevelbuilder.io/demo/saas-analytics-dashboard" target="_blank" class="portfolio-link">
+                                <i class="fas fa-external-link-alt"></i>
+                                <span data-en="View Live" data-vi="Xem Demo">Xem Demo</span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="portfolio-info">
+                        <h3 data-en="SaaS Analytics Dashboard" data-vi="Bảng Điều Khiển Phân Tích SaaS">Bảng Điều Khiển Phân Tích SaaS</h3>
+                        <p data-en="Modern analytics platform with real-time data visualization" data-vi="Nền tảng phân tích hiện đại với trực quan hóa dữ liệu thời gian thực">
+                            Nền tảng phân tích hiện đại với trực quan hóa dữ liệu thời gian thực
+                        </p>
+                    </div>
+                </div>
+                <div class="portfolio-item">
+                    <div class="portfolio-preview">
+                        <iframe src="https://ui-ux-pro-max-skill.nextlevelbuilder.io/demo/educational-platform" loading="lazy"></iframe>
+                        <div class="portfolio-overlay">
+                            <a href="https://ui-ux-pro-max-skill.nextlevelbuilder.io/demo/educational-platform" target="_blank" class="portfolio-link">
+                                <i class="fas fa-external-link-alt"></i>
+                                <span data-en="View Live" data-vi="Xem Demo">Xem Demo</span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="portfolio-info">
+                        <h3 data-en="Educational Platform" data-vi="Nền Tảng Giáo Dục">Nền Tảng Giáo Dục</h3>
+                        <p data-en="Interactive online learning platform for modern education" data-vi="Nền tảng học trực tuyến tương tác cho giáo dục hiện đại">
+                            Nền tảng học trực tuyến tương tác cho giáo dục hiện đại
+                        </p>
+                    </div>
+                </div>
+                <div class="portfolio-item">
+                    <div class="portfolio-preview">
+                        <iframe src="https://ui-ux-pro-max-skill.nextlevelbuilder.io/demo/pet-grooming" loading="lazy"></iframe>
+                        <div class="portfolio-overlay">
+                            <a href="https://ui-ux-pro-max-skill.nextlevelbuilder.io/demo/pet-grooming" target="_blank" class="portfolio-link">
+                                <i class="fas fa-external-link-alt"></i>
+                                <span data-en="View Live" data-vi="Xem Demo">Xem Demo</span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="portfolio-info">
+                        <h3 data-en="Pet Grooming Service" data-vi="Dịch Vụ Chăm Sóc Thú Cưng">Dịch Vụ Chăm Sóc Thú Cưng</h3>
+                        <p data-en="Beautiful website for pet grooming service with booking system" data-vi="Website đẹp cho dịch vụ chăm sóc thú cưng với hệ thống đặt lịch">
+                            Website đẹp cho dịch vụ chăm sóc thú cưng với hệ thống đặt lịch
+                        </p>
+                    </div>
+                </div>
+                <div class="portfolio-item">
+                    <div class="portfolio-preview">
+                        <iframe src="https://ui-ux-pro-max-skill.nextlevelbuilder.io/demo/ai-chatbot-platform" loading="lazy"></iframe>
+                        <div class="portfolio-overlay">
+                            <a href="https://ui-ux-pro-max-skill.nextlevelbuilder.io/demo/ai-chatbot-platform" target="_blank" class="portfolio-link">
+                                <i class="fas fa-external-link-alt"></i>
+                                <span data-en="View Live" data-vi="Xem Demo">Xem Demo</span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="portfolio-info">
+                        <h3 data-en="AI Chatbot Platform" data-vi="Nền Tảng AI Chatbot">Nền Tảng AI Chatbot</h3>
+                        <p data-en="Advanced AI-powered chatbot solution for businesses" data-vi="Giải pháp chatbot AI tiên tiến cho doanh nghiệp">
+                            Giải pháp chatbot AI tiên tiến cho doanh nghiệp
+                        </p>
+                    </div>
+                </div>
+                <div class="portfolio-item">
+                    <div class="portfolio-preview">
+                        <iframe src="https://ui-ux-pro-max-skill.nextlevelbuilder.io/demo/luxury-ecommerce" loading="lazy"></iframe>
+                        <div class="portfolio-overlay">
+                            <a href="https://ui-ux-pro-max-skill.nextlevelbuilder.io/demo/luxury-ecommerce" target="_blank" class="portfolio-link">
+                                <i class="fas fa-external-link-alt"></i>
+                                <span data-en="View Live" data-vi="Xem Demo">Xem Demo</span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="portfolio-info">
+                        <h3 data-en="Luxury E-Commerce" data-vi="Thương Mại Điện Tử Cao Cấp">Thương Mại Điện Tử Cao Cấp</h3>
+                        <p data-en="Elegant online store for luxury products and brands" data-vi="Cửa hàng trực tuyến sang trọng cho sản phẩm và thương hiệu cao cấp">
+                            Cửa hàng trực tuyến sang trọng cho sản phẩm và thương hiệu cao cấp
+                        </p>
+                    </div>
+                </div>
+                <div class="portfolio-item">
+                    <div class="portfolio-preview">
+                        <iframe src="https://ui-ux-pro-max-skill.nextlevelbuilder.io/demo/fintech-crypto" loading="lazy"></iframe>
+                        <div class="portfolio-overlay">
+                            <a href="https://ui-ux-pro-max-skill.nextlevelbuilder.io/demo/fintech-crypto" target="_blank" class="portfolio-link">
+                                <i class="fas fa-external-link-alt"></i>
+                                <span data-en="View Live" data-vi="Xem Demo">Xem Demo</span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="portfolio-info">
+                        <h3 data-en="Fintech & Crypto" data-vi="Fintech & Tiền Mã Hóa">Fintech & Tiền Mã Hóa</h3>
+                        <p data-en="Secure platform for cryptocurrency trading and finance" data-vi="Nền tảng an toàn cho giao dịch tiền mã hóa và tài chính">
+                            Nền tảng an toàn cho giao dịch tiền mã hóa và tài chính
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="pricing">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title" data-en="Pricing Plans" data-vi="Bảng Giá Dịch Vụ">Bảng Giá Dịch Vụ</h2>
+                <p class="section-subtitle" data-en="Choose the perfect plan for your business needs" data-vi="Chọn gói phù hợp với nhu cầu doanh nghiệp của bạn">
+                    Chọn gói phù hợp với nhu cầu doanh nghiệp của bạn
+                </p>
+            </div>
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <div class="pricing-header">
+                        <h3 data-en="Starter" data-vi="Cơ Bản">Cơ Bản</h3>
+                        <div class="price">
+                            <span class="currency">₫</span>
+                            <span class="amount">5,000,000</span>
+                        </div>
+                        <p class="price-subtitle" data-en="Perfect for small businesses" data-vi="Hoàn hảo cho doanh nghiệp nhỏ">
+                            Hoàn hảo cho doanh nghiệp nhỏ
+                        </p>
+                    </div>
+                    <ul class="pricing-features">
+                        <li><i class="fas fa-check"></i><span data-en="Up to 5 pages" data-vi="Tối đa 5 trang">Tối đa 5 trang</span></li>
+                        <li><i class="fas fa-check"></i><span data-en="Responsive design" data-vi="Thiết kế responsive">Thiết kế responsive</span></li>
+                        <li><i class="fas fa-check"></i><span data-en="Basic SEO" data-vi="SEO cơ bản">SEO cơ bản</span></li>
+                        <li><i class="fas fa-check"></i><span data-en="Contact form" data-vi="Form liên hệ">Form liên hệ</span></li>
+                        <li><i class="fas fa-check"></i><span data-en="1 month support" data-vi="Hỗ trợ 1 tháng">Hỗ trợ 1 tháng</span></li>
+                        <li class="disabled"><i class="fas fa-times"></i><span data-en="E-commerce features" data-vi="Tính năng thương mại">Tính năng thương mại</span></li>
+                        <li class="disabled"><i class="fas fa-times"></i><span data-en="Custom CMS" data-vi="CMS tùy chỉnh">CMS tùy chỉnh</span></li>
+                    </ul>
+                    <a href="#contact" class="btn btn-outline" data-en="Get Started" data-vi="Bắt đầu">Bắt đầu</a>
+                </div>
+                <div class="pricing-card featured">
+                    <div class="popular-badge" data-en="Most Popular" data-vi="Phổ biến nhất">Phổ biến nhất</div>
+                    <div class="pricing-header">
+                        <h3 data-en="Professional" data-vi="Chuyên Nghiệp">Chuyên Nghiệp</h3>
+                        <div class="price">
+                            <span class="currency">₫</span>
+                            <span class="amount">12,000,000</span>
+                        </div>
+                        <p class="price-subtitle" data-en="Best for growing businesses" data-vi="Tốt nhất cho doanh nghiệp phát triển">
+                            Tốt nhất cho doanh nghiệp phát triển
+                        </p>
+                    </div>
+                    <ul class="pricing-features">
+                        <li><i class="fas fa-check"></i><span data-en="Up to 15 pages" data-vi="Tối đa 15 trang">Tối đa 15 trang</span></li>
+                        <li><i class="fas fa-check"></i><span data-en="Premium design" data-vi="Thiết kế cao cấp">Thiết kế cao cấp</span></li>
+                        <li><i class="fas fa-check"></i><span data-en="Advanced SEO" data-vi="SEO nâng cao">SEO nâng cao</span></li>
+                        <li><i class="fas fa-check"></i><span data-en="Interactive features" data-vi="Tính năng tương tác">Tính năng tương tác</span></li>
+                        <li><i class="fas fa-check"></i><span data-en="3 months support" data-vi="Hỗ trợ 3 tháng">Hỗ trợ 3 tháng</span></li>
+                        <li><i class="fas fa-check"></i><span data-en="Basic e-commerce" data-vi="Thương mại cơ bản">Thương mại cơ bản</span></li>
+                        <li><i class="fas fa-check"></i><span data-en="Content management" data-vi="Quản lý nội dung">Quản lý nội dung</span></li>
+                    </ul>
+                    <a href="#contact" class="btn btn-primary" data-en="Get Started" data-vi="Bắt đầu">Bắt đầu</a>
+                </div>
+                <div class="pricing-card">
+                    <div class="pricing-header">
+                        <h3 data-en="Enterprise" data-vi="Doanh Nghiệp">Doanh Nghiệp</h3>
+                        <div class="price">
+                            <span class="currency">₫</span>
+                            <span class="amount">25,000,000</span>
+                            <span class="plus">+</span>
+                        </div>
+                        <p class="price-subtitle" data-en="For large-scale projects" data-vi="Cho dự án quy mô lớn">
+                            Cho dự án quy mô lớn
+                        </p>
+                    </div>
+                    <ul class="pricing-features">
+                        <li><i class="fas fa-check"></i><span data-en="Unlimited pages" data-vi="Không giới hạn trang">Không giới hạn trang</span></li>
+                        <li><i class="fas fa-check"></i><span data-en="Custom design" data-vi="Thiết kế tùy chỉnh">Thiết kế tùy chỉnh</span></li>
+                        <li><i class="fas fa-check"></i><span data-en="Premium SEO" data-vi="SEO cao cấp">SEO cao cấp</span></li>
+                        <li><i class="fas fa-check"></i><span data-en="Advanced features" data-vi="Tính năng nâng cao">Tính năng nâng cao</span></li>
+                        <li><i class="fas fa-check"></i><span data-en="12 months support" data-vi="Hỗ trợ 12 tháng">Hỗ trợ 12 tháng</span></li>
+                        <li><i class="fas fa-check"></i><span data-en="Full e-commerce" data-vi="Thương mại đầy đủ">Thương mại đầy đủ</span></li>
+                        <li><i class="fas fa-check"></i><span data-en="Custom CMS & API" data-vi="CMS & API tùy chỉnh">CMS & API tùy chỉnh</span></li>
+                    </ul>
+                    <a href="#contact" class="btn btn-outline" data-en="Contact Us" data-vi="Liên hệ">Liên hệ</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title" data-en="What Our Clients Say" data-vi="Khách Hàng Nói Gì">Khách Hàng Nói Gì</h2>
+                <p class="section-subtitle" data-en="Real feedback from satisfied customers" data-vi="Phản hồi thật từ khách hàng hài lòng">
+                    Phản hồi thật từ khách hàng hài lòng
+                </p>
+            </div>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="testimonial-text" data-en="EZpage delivered an exceptional website that exceeded our expectations. Professional team, timely delivery, and excellent support!" data-vi="EZpage đã tạo ra một website xuất sắc vượt mong đợi. Đội ngũ chuyên nghiệp, giao hàng đúng hạn, hỗ trợ tuyệt vời!">
+                        EZpage đã tạo ra một website xuất sắc vượt mong đợi. Đội ngũ chuyên nghiệp, giao hàng đúng hạn, hỗ trợ tuyệt vời!
+                    </p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div class="author-info">
+                            <h4 data-en="Nguyen Van A" data-vi="Nguyễn Văn A">Nguyễn Văn A</h4>
+                            <p data-en="CEO, TechCorp Vietnam" data-vi="CEO, TechCorp Vietnam">CEO, TechCorp Vietnam</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="testimonial-text" data-en="Amazing work! Our e-commerce site is beautiful and functions perfectly. Sales increased by 150% in just 3 months!" data-vi="Công việc tuyệt vời! Website thương mại của chúng tôi đẹp và hoạt động hoàn hảo. Doanh số tăng 150% chỉ sau 3 tháng!">
+                        Công việc tuyệt vời! Website thương mại của chúng tôi đẹp và hoạt động hoàn hảo. Doanh số tăng 150% chỉ sau 3 tháng!
+                    </p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div class="author-info">
+                            <h4 data-en="Tran Thi B" data-vi="Trần Thị B">Trần Thị B</h4>
+                            <p data-en="Founder, Fashion Store Online" data-vi="Founder, Fashion Store Online">Founder, Fashion Store Online</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="testimonial-text" data-en="Highly recommended! EZpage understood our vision and created a website that perfectly represents our brand. Excellent value for money." data-vi="Rất đáng giới thiệu! EZpage hiểu tầm nhìn của chúng tôi và tạo ra website thể hiện hoàn hảo thương hiệu. Giá trị tuyệt vời cho tiền bỏ ra.">
+                        Rất đáng giới thiệu! EZpage hiểu tầm nhìn của chúng tôi và tạo ra website thể hiện hoàn hảo thương hiệu. Giá trị tuyệt vời cho tiền bỏ ra.
+                    </p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div class="author-info">
+                            <h4 data-en="Le Van C" data-vi="Lê Văn C">Lê Văn C</h4>
+                            <p data-en="Marketing Director, EduTech Solutions" data-vi="Giám Đốc Marketing, EduTech Solutions">Giám Đốc Marketing, EduTech Solutions</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title" data-en="Request a Quote" data-vi="Yêu Cầu Báo Giá">Yêu Cầu Báo Giá</h2>
+                <p class="section-subtitle" data-en="Let's discuss your project and get started today" data-vi="Hãy thảo luận về dự án của bạn và bắt đầu ngay hôm nay">
+                    Hãy thảo luận về dự án của bạn và bắt đầu ngay hôm nay
+                </p>
+            </div>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="info-card">
+                        <i class="fas fa-envelope"></i>
+                        <h3 data-en="Email Us" data-vi="Email">Email</h3>
+                        <p>contact@ezpage.vn</p>
+                    </div>
+                    <div class="info-card">
+                        <i class="fas fa-phone"></i>
+                        <h3 data-en="Call Us" data-vi="Điện Thoại">Điện Thoại</h3>
+                        <p>+84 123 456 789</p>
+                    </div>
+                    <div class="info-card">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <h3 data-en="Visit Us" data-vi="Địa Chỉ">Địa Chỉ</h3>
+                        <p data-en="Ho Chi Minh City, Vietnam" data-vi="Tp. Hồ Chí Minh, Việt Nam">Tp. Hồ Chí Minh, Việt Nam</p>
+                    </div>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <form class="contact-form" id="contactForm">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="name" data-en="Full Name *" data-vi="Họ và Tên *">Họ và Tên *</label>
+                            <input type="text" id="name" name="name" required placeholder="John Doe">
+                        </div>
+                        <div class="form-group">
+                            <label for="email" data-en="Email Address *" data-vi="Địa Chỉ Email *">Địa Chỉ Email *</label>
+                            <input type="email" id="email" name="email" required placeholder="email@example.com">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="websiteType" data-en="Website Type *" data-vi="Loại Website *">Loại Website *</label>
+                        <select id="websiteType" name="websiteType" required>
+                            <option value="" data-en="Select website type" data-vi="Chọn loại website">Chọn loại website</option>
+                            <option value="corporate" data-en="Corporate Website" data-vi="Website Doanh Nghiệp">Website Doanh Nghiệp</option>
+                            <option value="ecommerce" data-en="E-Commerce Store" data-vi="Cửa Hàng Thương Mại">Cửa Hàng Thương Mại</option>
+                            <option value="portfolio" data-en="Portfolio/Personal" data-vi="Portfolio/Cá Nhân">Portfolio/Cá Nhân</option>
+                            <option value="blog" data-en="Blog/News" data-vi="Blog/Tin Tức">Blog/Tin Tức</option>
+                            <option value="landing" data-en="Landing Page" data-vi="Landing Page">Landing Page</option>
+                            <option value="custom" data-en="Custom Solution" data-vi="Giải Pháp Tùy Chỉnh">Giải Pháp Tùy Chỉnh</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="message" data-en="Project Details *" data-vi="Yêu Cầu Chi Tiết *">Yêu Cầu Chi Tiết *</label>
+                        <textarea id="message" name="message" rows="6" required placeholder="Tell us about your project..."></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-submit">
+                        <span data-en="Send Request" data-vi="Gửi Yêu Cầu">Gửi Yêu Cầu</span>
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                    <div class="form-message" id="formMessage"></div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="logo">
+                        <i class="fas fa-code"></i>
+                        <span>EZ<span class="highlight">page</span></span>
+                    </div>
+                    <p data-en="Professional web development solutions for your business success" data-vi="Giải pháp phát triển web chuyên nghiệp cho sự thành công doanh nghiệp">
+                        Giải pháp phát triển web chuyên nghiệp cho sự thành công doanh nghiệp
+                    </p>
+                </div>
+                <div class="footer-section">
+                    <h4 data-en="Quick Links" data-vi="Liên Kết">Liên Kết</h4>
+                    <ul>
+                        <li><a href="#services" data-en="Services" data-vi="Dịch vụ">Dịch vụ</a></li>
+                        <li><a href="#portfolio" data-en="Portfolio" data-vi="Dự án">Dự án</a></li>
+                        <li><a href="#pricing" data-en="Pricing" data-vi="Bảng giá">Bảng giá</a></li>
+                        <li><a href="#contact" data-en="Contact" data-vi="Liên hệ">Liên hệ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4 data-en="Services" data-vi="Dịch Vụ">Dịch Vụ</h4>
+                    <ul>
+                        <li><a href="#" data-en="Web Design" data-vi="Thiết kế Web">Thiết kế Web</a></li>
+                        <li><a href="#" data-en="Web Development" data-vi="Phát triển Web">Phát triển Web</a></li>
+                        <li><a href="#" data-en="E-Commerce" data-vi="Thương mại điện tử">Thương mại điện tử</a></li>
+                        <li><a href="#" data-en="SEO Services" data-vi="Dịch vụ SEO">Dịch vụ SEO</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4 data-en="Newsletter" data-vi="Đăng Ký">Đăng Ký</h4>
+                    <p data-en="Subscribe to get latest updates" data-vi="Đăng ký để nhận tin tức mới nhất">
+                        Đăng ký để nhận tin tức mới nhất
+                    </p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Your email">
+                        <button type="submit"><i class="fas fa-arrow-right"></i></button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 EZpage. <span data-en="All rights reserved." data-vi="Bảo lưu mọi quyền.">Bảo lưu mọi quyền.</span></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
