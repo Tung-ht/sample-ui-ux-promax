@@ -1,557 +1,1472 @@
 <!DOCTYPE html>
-<html lang="vi">
+<html lang="vi" data-lang="vi">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EZpage - Giải Pháp Website Chuyên Nghiệp</title>
-    <meta name="description" content="EZpage - Công ty phát triển website chuyên nghiệp, giá cả hợp lý, thiết kế hiện đại">
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EZpage - Giải pháp Web Chuyên nghiệp</title>
+  <meta name="description" content="EZpage - Công ty phát triển web hàng đầu với đội ngũ chuyên nghiệp, sáng tạo">
+  
+  <!-- Google Fonts - Plus Jakarta Sans (Vietnamese-friendly) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+  
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            'jakarta': ['"Plus Jakarta Sans"', 'sans-serif'],
+          },
+          colors: {
+            primary: '#0F172A',
+            secondary: '#334155',
+            cta: '#0369A1',
+            accent: '#06B6D4',
+            surface: '#F8FAFC',
+            'surface-dark': '#E2E8F0',
+            text: '#020617',
+            'text-muted': '#64748B',
+            success: '#10B981',
+            warning: '#F59E0B',
+            gradient: {
+              start: '#0369A1',
+              end: '#06B6D4',
+            }
+          },
+          animation: {
+            'float': 'float 6s ease-in-out infinite',
+            'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+            'slide-up': 'slideUp 0.6s ease-out forwards',
+            'fade-in': 'fadeIn 0.8s ease-out forwards',
+            'bounce-subtle': 'bounceSubtle 2s infinite',
+          },
+          keyframes: {
+            float: {
+              '0%, 100%': { transform: 'translateY(0px)' },
+              '50%': { transform: 'translateY(-20px)' },
+            },
+            slideUp: {
+              '0%': { opacity: '0', transform: 'translateY(30px)' },
+              '100%': { opacity: '1', transform: 'translateY(0)' },
+            },
+            fadeIn: {
+              '0%': { opacity: '0' },
+              '100%': { opacity: '1' },
+            },
+            bounceSubtle: {
+              '0%, 100%': { transform: 'translateY(0)' },
+              '50%': { transform: 'translateY(-5px)' },
+            },
+          },
+        },
+      },
+    }
+  </script>
+  
+  <style>
+    * {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+    
+    /* Smooth scrolling with reduced motion support */
+    @media (prefers-reduced-motion: no-preference) {
+      html {
+        scroll-behavior: smooth;
+      }
+    }
+    
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
+    
+    /* Custom scrollbar */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+    
+    ::-webkit-scrollbar-track {
+      background: #F8FAFC;
+    }
+    
+    ::-webkit-scrollbar-thumb {
+      background: #0369A1;
+      border-radius: 4px;
+    }
+    
+    ::-webkit-scrollbar-thumb:hover {
+      background: #0284C7;
+    }
+    
+    /* Gradient text */
+    .gradient-text {
+      background: linear-gradient(135deg, #0369A1 0%, #06B6D4 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    
+    /* Animated gradient background */
+    .gradient-bg {
+      background: linear-gradient(-45deg, #0369A1, #06B6D4, #0F172A, #334155);
+      background-size: 400% 400%;
+      animation: gradientShift 15s ease infinite;
+    }
+    
+    @keyframes gradientShift {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+    
+    /* Glass morphism effect */
+    .glass {
+      background: rgba(255, 255, 255, 0.9);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+    }
+    
+    /* Portfolio card hover effect */
+    .portfolio-card {
+      transition: all 0.3s ease;
+    }
+    
+    .portfolio-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 25px 50px -12px rgba(3, 105, 161, 0.25);
+    }
+    
+    /* Staggered animations */
+    .stagger-1 { animation-delay: 0.1s; }
+    .stagger-2 { animation-delay: 0.2s; }
+    .stagger-3 { animation-delay: 0.3s; }
+    .stagger-4 { animation-delay: 0.4s; }
+    .stagger-5 { animation-delay: 0.5s; }
+    .stagger-6 { animation-delay: 0.6s; }
+    
+    /* Focus visible for accessibility */
+    .focus-visible-ring:focus-visible {
+      outline: 2px solid #0369A1;
+      outline-offset: 2px;
+    }
+    
+    /* Hide scrollbar for portfolio */
+    .hide-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .hide-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+
+    /* Geometric pattern background */
+    .geo-pattern {
+      background-image: 
+        radial-gradient(circle at 20% 80%, rgba(6, 182, 212, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(3, 105, 161, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 40% 40%, rgba(15, 23, 42, 0.05) 0%, transparent 30%);
+    }
+    
+    /* Preview iframe container */
+    .preview-container {
+      position: relative;
+      overflow: hidden;
+      border-radius: 12px;
+    }
+    
+    .preview-container::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, transparent 70%, rgba(15, 23, 42, 0.8) 100%);
+      pointer-events: none;
+      z-index: 10;
+    }
+    
+    .preview-iframe {
+      width: 200%;
+      height: 200%;
+      transform: scale(0.5);
+      transform-origin: top left;
+      pointer-events: none;
+    }
+  </style>
 </head>
-<body>
-    <!-- Navigation -->
-    <nav class="navbar" id="navbar">
-        <div class="container nav-container">
-            <div class="logo">
-                <i class="fas fa-code"></i>
-                <span>EZ<span class="highlight">page</span></span>
-            </div>
-            <ul class="nav-menu" id="navMenu">
-                <li><a href="#home" class="nav-link" data-en="Home" data-vi="Trang chủ">Trang chủ</a></li>
-                <li><a href="#services" class="nav-link" data-en="Services" data-vi="Dịch vụ">Dịch vụ</a></li>
-                <li><a href="#portfolio" class="nav-link" data-en="Portfolio" data-vi="Dự án">Dự án</a></li>
-                <li><a href="#pricing" class="nav-link" data-en="Pricing" data-vi="Bảng giá">Bảng giá</a></li>
-                <li><a href="#contact" class="nav-link" data-en="Contact" data-vi="Liên hệ">Liên hệ</a></li>
-                <li class="language-switcher">
-                    <button class="lang-btn" id="langToggle">
-                        <i class="fas fa-globe"></i>
-                        <span id="currentLang">VI</span>
-                    </button>
-                </li>
-            </ul>
-            <div class="hamburger" id="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
+<body class="bg-surface text-text font-jakarta antialiased">
+  
+  <!-- Navigation -->
+  <nav class="fixed top-4 left-4 right-4 z-50 glass rounded-2xl shadow-lg">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16">
+        <!-- Logo -->
+        <a href="#" class="flex items-center gap-2 cursor-pointer focus-visible-ring rounded-lg p-1" aria-label="EZpage Home">
+          <div class="w-10 h-10 bg-gradient-to-br from-cta to-accent rounded-xl flex items-center justify-center">
+            <span class="text-white font-bold text-lg">EZ</span>
+          </div>
+          <span class="text-xl font-bold text-primary">EZpage</span>
+        </a>
+        
+        <!-- Desktop Menu -->
+        <div class="hidden md:flex items-center gap-8">
+          <a href="#services" class="text-secondary hover:text-cta transition-colors duration-200 cursor-pointer focus-visible-ring rounded px-2 py-1" data-i18n="nav.services">Dịch vụ</a>
+          <a href="#portfolio" class="text-secondary hover:text-cta transition-colors duration-200 cursor-pointer focus-visible-ring rounded px-2 py-1" data-i18n="nav.portfolio">Dự án</a>
+          <a href="#clients" class="text-secondary hover:text-cta transition-colors duration-200 cursor-pointer focus-visible-ring rounded px-2 py-1" data-i18n="nav.clients">Khách hàng</a>
+          <a href="#pricing" class="text-secondary hover:text-cta transition-colors duration-200 cursor-pointer focus-visible-ring rounded px-2 py-1" data-i18n="nav.pricing">Bảng giá</a>
+          <a href="#contact" class="text-secondary hover:text-cta transition-colors duration-200 cursor-pointer focus-visible-ring rounded px-2 py-1" data-i18n="nav.contact">Liên hệ</a>
         </div>
-    </nav>
-
-    <!-- Hero Section -->
-    <section id="home" class="hero">
-        <div class="container">
-            <div class="hero-content">
-                <div class="hero-text">
-                    <h1 class="hero-title" data-en="Professional Website Solutions for Your Business" data-vi="Giải Pháp Website Chuyên Nghiệp Cho Doanh Nghiệp">
-                        Giải Pháp Website Chuyên Nghiệp Cho Doanh Nghiệp
-                    </h1>
-                    <p class="hero-subtitle" data-en="We create modern, responsive websites that help your business grow online. Fast delivery, reasonable prices, and outstanding quality." data-vi="Chúng tôi tạo ra các website hiện đại, responsive giúp doanh nghiệp phát triển trực tuyến. Giao hàng nhanh, giá cả hợp lý, chất lượng xuất sắc.">
-                        Chúng tôi tạo ra các website hiện đại, responsive giúp doanh nghiệp phát triển trực tuyến. Giao hàng nhanh, giá cả hợp lý, chất lượng xuất sắc.
-                    </p>
-                    <div class="hero-buttons">
-                        <a href="#contact" class="btn btn-primary" data-en="Get Started" data-vi="Bắt đầu ngay">Bắt đầu ngay</a>
-                        <a href="#portfolio" class="btn btn-secondary" data-en="View Portfolio" data-vi="Xem dự án">Xem dự án</a>
-                    </div>
-                    <div class="hero-stats">
-                        <div class="stat">
-                            <i class="fas fa-check-circle"></i>
-                            <span data-en="200+ Projects" data-vi="200+ Dự án">200+ Dự án</span>
-                        </div>
-                        <div class="stat">
-                            <i class="fas fa-users"></i>
-                            <span data-en="150+ Happy Clients" data-vi="150+ Khách hàng">150+ Khách hàng</span>
-                        </div>
-                        <div class="stat">
-                            <i class="fas fa-star"></i>
-                            <span data-en="5-Star Rating" data-vi="Đánh giá 5 sao">Đánh giá 5 sao</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="hero-image">
-                    <div class="floating-card card-1">
-                        <i class="fas fa-laptop-code"></i>
-                        <span data-en="Responsive Design" data-vi="Thiết kế Responsive">Thiết kế Responsive</span>
-                    </div>
-                    <div class="floating-card card-2">
-                        <i class="fas fa-rocket"></i>
-                        <span data-en="Fast Loading" data-vi="Tải Nhanh">Tải Nhanh</span>
-                    </div>
-                    <div class="floating-card card-3">
-                        <i class="fas fa-shield-alt"></i>
-                        <span data-en="Secure" data-vi="Bảo Mật">Bảo Mật</span>
-                    </div>
-                    <div class="hero-illustration">
-                        <i class="fas fa-desktop"></i>
-                    </div>
-                </div>
-            </div>
+        
+        <!-- Right Section: Language Switcher + CTA -->
+        <div class="flex items-center gap-4">
+          <!-- Language Switcher -->
+          <div class="flex items-center bg-surface-dark rounded-lg p-1">
+            <button 
+              id="lang-vi" 
+              class="px-3 py-1 rounded-md text-sm font-medium transition-all duration-200 cursor-pointer focus-visible-ring bg-white text-primary shadow-sm"
+              onclick="switchLanguage('vi')"
+              aria-label="Tiếng Việt"
+            >
+              VI
+            </button>
+            <button 
+              id="lang-en" 
+              class="px-3 py-1 rounded-md text-sm font-medium transition-all duration-200 cursor-pointer focus-visible-ring text-text-muted hover:text-primary"
+              onclick="switchLanguage('en')"
+              aria-label="English"
+            >
+              EN
+            </button>
+          </div>
+          
+          <!-- CTA Button -->
+          <a href="#contact" class="hidden sm:flex items-center gap-2 bg-gradient-to-r from-cta to-accent text-white px-5 py-2.5 rounded-xl font-semibold hover:shadow-lg hover:shadow-cta/25 transition-all duration-200 cursor-pointer focus-visible-ring">
+            <span data-i18n="nav.cta">Bắt đầu</span>
+            <i data-lucide="arrow-right" class="w-4 h-4"></i>
+          </a>
+          
+          <!-- Mobile Menu Button -->
+          <button id="mobile-menu-btn" class="md:hidden p-2 rounded-lg hover:bg-surface-dark transition-colors duration-200 cursor-pointer focus-visible-ring" aria-label="Menu">
+            <i data-lucide="menu" class="w-6 h-6 text-primary"></i>
+          </button>
         </div>
-    </section>
-
-    <!-- Services Section -->
-    <section id="services" class="services">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title" data-en="Our Services" data-vi="Dịch Vụ Của Chúng Tôi">Dịch Vụ Của Chúng Tôi</h2>
-                <p class="section-subtitle" data-en="We offer comprehensive web development solutions tailored to your needs" data-vi="Chúng tôi cung cấp giải pháp phát triển web toàn diện phù hợp với nhu cầu của bạn">
-                    Chúng tôi cung cấp giải pháp phát triển web toàn diện phù hợp với nhu cầu của bạn
-                </p>
+      </div>
+    </div>
+    
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="hidden md:hidden border-t border-surface-dark">
+      <div class="px-4 py-4 space-y-3">
+        <a href="#services" class="block px-4 py-2 rounded-lg text-secondary hover:bg-surface-dark hover:text-cta transition-colors duration-200 cursor-pointer" data-i18n="nav.services">Dịch vụ</a>
+        <a href="#portfolio" class="block px-4 py-2 rounded-lg text-secondary hover:bg-surface-dark hover:text-cta transition-colors duration-200 cursor-pointer" data-i18n="nav.portfolio">Dự án</a>
+        <a href="#clients" class="block px-4 py-2 rounded-lg text-secondary hover:bg-surface-dark hover:text-cta transition-colors duration-200 cursor-pointer" data-i18n="nav.clients">Khách hàng</a>
+        <a href="#pricing" class="block px-4 py-2 rounded-lg text-secondary hover:bg-surface-dark hover:text-cta transition-colors duration-200 cursor-pointer" data-i18n="nav.pricing">Bảng giá</a>
+        <a href="#contact" class="block px-4 py-2 rounded-lg text-secondary hover:bg-surface-dark hover:text-cta transition-colors duration-200 cursor-pointer" data-i18n="nav.contact">Liên hệ</a>
+      </div>
+    </div>
+  </nav>
+  
+  <!-- Hero Section -->
+  <section class="min-h-screen pt-32 pb-20 px-4 geo-pattern relative overflow-hidden">
+    <!-- Decorative elements -->
+    <div class="absolute top-20 right-10 w-72 h-72 bg-accent/10 rounded-full blur-3xl"></div>
+    <div class="absolute bottom-20 left-10 w-96 h-96 bg-cta/10 rounded-full blur-3xl"></div>
+    
+    <div class="max-w-7xl mx-auto relative z-10">
+      <div class="grid lg:grid-cols-2 gap-12 items-center">
+        <!-- Left: Content -->
+        <div class="space-y-8">
+          <div class="inline-flex items-center gap-2 bg-white px-4 py-2 rounded-full shadow-md animate-slide-up opacity-0">
+            <span class="w-2 h-2 bg-success rounded-full animate-pulse"></span>
+            <span class="text-sm font-medium text-secondary" data-i18n="hero.badge">Đang mở đơn dự án mới</span>
+          </div>
+          
+          <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight animate-slide-up opacity-0 stagger-1">
+            <span data-i18n="hero.title1">Biến ý tưởng thành</span>
+            <br>
+            <span class="gradient-text" data-i18n="hero.title2">Website xuất sắc</span>
+          </h1>
+          
+          <p class="text-lg text-text-muted max-w-xl animate-slide-up opacity-0 stagger-2" data-i18n="hero.description">
+            EZpage chuyên thiết kế và phát triển website chuyên nghiệp, tối ưu UX/UI, giúp doanh nghiệp bạn tỏa sáng trên không gian số.
+          </p>
+          
+          <div class="flex flex-col sm:flex-row gap-4 animate-slide-up opacity-0 stagger-3">
+            <a href="#contact" class="inline-flex items-center justify-center gap-2 bg-gradient-to-r from-cta to-accent text-white px-8 py-4 rounded-xl font-semibold text-lg hover:shadow-xl hover:shadow-cta/25 transition-all duration-300 cursor-pointer focus-visible-ring">
+              <span data-i18n="hero.cta1">Nhận tư vấn miễn phí</span>
+              <i data-lucide="sparkles" class="w-5 h-5"></i>
+            </a>
+            <a href="#portfolio" class="inline-flex items-center justify-center gap-2 bg-white text-primary border-2 border-primary px-8 py-4 rounded-xl font-semibold text-lg hover:bg-primary hover:text-white transition-all duration-300 cursor-pointer focus-visible-ring">
+              <span data-i18n="hero.cta2">Xem dự án</span>
+              <i data-lucide="play" class="w-5 h-5"></i>
+            </a>
+          </div>
+          
+          <!-- Stats -->
+          <div class="flex flex-wrap gap-8 pt-8 animate-slide-up opacity-0 stagger-4">
+            <div class="text-center">
+              <div class="text-3xl font-bold text-primary">150+</div>
+              <div class="text-sm text-text-muted" data-i18n="hero.stat1">Dự án hoàn thành</div>
             </div>
-            <div class="services-grid">
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-paint-brush"></i>
-                    </div>
-                    <h3 data-en="Web Design" data-vi="Thiết Kế Web">Thiết Kế Web</h3>
-                    <p data-en="Modern, attractive UI/UX design that captivates your visitors and enhances user experience" data-vi="Thiết kế UI/UX hiện đại, hấp dẫn thu hút khách hàng và nâng cao trải nghiệm người dùng">
-                        Thiết kế UI/UX hiện đại, hấp dẫn thu hút khách hàng và nâng cao trải nghiệm người dùng
-                    </p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-code"></i>
-                    </div>
-                    <h3 data-en="Web Development" data-vi="Phát Triển Web">Phát Triển Web</h3>
-                    <p data-en="Professional coding with latest technologies, optimized for performance and SEO" data-vi="Lập trình chuyên nghiệp với công nghệ mới nhất, tối ưu hiệu suất và SEO">
-                        Lập trình chuyên nghiệp với công nghệ mới nhất, tối ưu hiệu suất và SEO
-                    </p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-mobile-alt"></i>
-                    </div>
-                    <h3 data-en="Mobile Responsive" data-vi="Responsive Mobile">Responsive Mobile</h3>
-                    <p data-en="Perfect display on all devices - desktop, tablet, and mobile phones" data-vi="Hiển thị hoàn hảo trên mọi thiết bị - desktop, tablet và điện thoại">
-                        Hiển thị hoàn hảo trên mọi thiết bị - desktop, tablet và điện thoại
-                    </p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-shopping-cart"></i>
-                    </div>
-                    <h3 data-en="E-Commerce" data-vi="Website Thương Mại">Website Thương Mại</h3>
-                    <p data-en="Complete online store with payment integration and inventory management" data-vi="Cửa hàng trực tuyến hoàn chỉnh với tích hợp thanh toán và quản lý kho">
-                        Cửa hàng trực tuyến hoàn chỉnh với tích hợp thanh toán và quản lý kho
-                    </p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-search"></i>
-                    </div>
-                    <h3 data-en="SEO Optimization" data-vi="Tối Ưu SEO">Tối Ưu SEO</h3>
-                    <p data-en="Improve search rankings to help customers easily find your business" data-vi="Cải thiện thứ hạng tìm kiếm giúp khách hàng dễ dàng tìm thấy doanh nghiệp">
-                        Cải thiện thứ hạng tìm kiếm giúp khách hàng dễ dàng tìm thấy doanh nghiệp
-                    </p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-headset"></i>
-                    </div>
-                    <h3 data-en="Support & Maintenance" data-vi="Hỗ Trợ & Bảo Trì">Hỗ Trợ & Bảo Trì</h3>
-                    <p data-en="24/7 technical support and regular maintenance to ensure smooth operation" data-vi="Hỗ trợ kỹ thuật 24/7 và bảo trì định kỳ đảm bảo hoạt động ổn định">
-                        Hỗ trợ kỹ thuật 24/7 và bảo trì định kỳ đảm bảo hoạt động ổn định
-                    </p>
-                </div>
+            <div class="text-center">
+              <div class="text-3xl font-bold text-primary">50+</div>
+              <div class="text-sm text-text-muted" data-i18n="hero.stat2">Khách hàng tin tưởng</div>
             </div>
+            <div class="text-center">
+              <div class="text-3xl font-bold text-primary">5+</div>
+              <div class="text-sm text-text-muted" data-i18n="hero.stat3">Năm kinh nghiệm</div>
+            </div>
+          </div>
         </div>
-    </section>
-
-    <!-- Portfolio Section -->
-    <section id="portfolio" class="portfolio">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title" data-en="Our Portfolio" data-vi="Dự Án Của Chúng Tôi">Dự Án Của Chúng Tôi</h2>
-                <p class="section-subtitle" data-en="Explore our recent projects and see the quality of our work" data-vi="Khám phá các dự án gần đây và thấy chất lượng công việc của chúng tôi">
-                    Khám phá các dự án gần đây và thấy chất lượng công việc của chúng tôi
-                </p>
+        
+        <!-- Right: Visual -->
+        <div class="relative animate-fade-in opacity-0 stagger-4">
+          <div class="relative">
+            <!-- Main visual card -->
+            <div class="bg-white rounded-3xl shadow-2xl p-6 relative z-20">
+              <div class="bg-gradient-to-br from-cta/5 to-accent/5 rounded-2xl p-8">
+                <div class="flex items-center gap-4 mb-6">
+                  <div class="w-3 h-3 bg-red-400 rounded-full"></div>
+                  <div class="w-3 h-3 bg-yellow-400 rounded-full"></div>
+                  <div class="w-3 h-3 bg-green-400 rounded-full"></div>
+                </div>
+                <div class="space-y-4">
+                  <div class="h-4 bg-gradient-to-r from-cta to-accent rounded-full w-3/4"></div>
+                  <div class="h-3 bg-surface-dark rounded-full w-full"></div>
+                  <div class="h-3 bg-surface-dark rounded-full w-5/6"></div>
+                  <div class="grid grid-cols-3 gap-4 mt-8">
+                    <div class="h-24 bg-white rounded-xl shadow-md"></div>
+                    <div class="h-24 bg-gradient-to-br from-cta to-accent rounded-xl"></div>
+                    <div class="h-24 bg-white rounded-xl shadow-md"></div>
+                  </div>
+                </div>
+              </div>
             </div>
-            <div class="portfolio-grid">
-                <div class="portfolio-item">
-                    <div class="portfolio-preview">
-                        <iframe src="https://ui-ux-pro-max-skill.nextlevelbuilder.io/demo/saas-analytics-dashboard" loading="lazy"></iframe>
-                        <div class="portfolio-overlay">
-                            <a href="https://ui-ux-pro-max-skill.nextlevelbuilder.io/demo/saas-analytics-dashboard" target="_blank" class="portfolio-link">
-                                <i class="fas fa-external-link-alt"></i>
-                                <span data-en="View Live" data-vi="Xem Demo">Xem Demo</span>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="portfolio-info">
-                        <h3 data-en="SaaS Analytics Dashboard" data-vi="Bảng Điều Khiển Phân Tích SaaS">Bảng Điều Khiển Phân Tích SaaS</h3>
-                        <p data-en="Modern analytics platform with real-time data visualization" data-vi="Nền tảng phân tích hiện đại với trực quan hóa dữ liệu thời gian thực">
-                            Nền tảng phân tích hiện đại với trực quan hóa dữ liệu thời gian thực
-                        </p>
-                    </div>
+            
+            <!-- Floating elements -->
+            <div class="absolute -top-4 -right-4 bg-white rounded-2xl shadow-xl p-4 animate-float z-30">
+              <div class="flex items-center gap-3">
+                <div class="w-10 h-10 bg-success/10 rounded-full flex items-center justify-center">
+                  <i data-lucide="check-circle" class="w-6 h-6 text-success"></i>
                 </div>
-                <div class="portfolio-item">
-                    <div class="portfolio-preview">
-                        <iframe src="https://ui-ux-pro-max-skill.nextlevelbuilder.io/demo/educational-platform" loading="lazy"></iframe>
-                        <div class="portfolio-overlay">
-                            <a href="https://ui-ux-pro-max-skill.nextlevelbuilder.io/demo/educational-platform" target="_blank" class="portfolio-link">
-                                <i class="fas fa-external-link-alt"></i>
-                                <span data-en="View Live" data-vi="Xem Demo">Xem Demo</span>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="portfolio-info">
-                        <h3 data-en="Educational Platform" data-vi="Nền Tảng Giáo Dục">Nền Tảng Giáo Dục</h3>
-                        <p data-en="Interactive online learning platform for modern education" data-vi="Nền tảng học trực tuyến tương tác cho giáo dục hiện đại">
-                            Nền tảng học trực tuyến tương tác cho giáo dục hiện đại
-                        </p>
-                    </div>
+                <div>
+                  <div class="text-xs text-text-muted" data-i18n="hero.float1.label">Tốc độ tải</div>
+                  <div class="font-bold text-primary">98/100</div>
                 </div>
-                <div class="portfolio-item">
-                    <div class="portfolio-preview">
-                        <iframe src="https://ui-ux-pro-max-skill.nextlevelbuilder.io/demo/pet-grooming" loading="lazy"></iframe>
-                        <div class="portfolio-overlay">
-                            <a href="https://ui-ux-pro-max-skill.nextlevelbuilder.io/demo/pet-grooming" target="_blank" class="portfolio-link">
-                                <i class="fas fa-external-link-alt"></i>
-                                <span data-en="View Live" data-vi="Xem Demo">Xem Demo</span>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="portfolio-info">
-                        <h3 data-en="Pet Grooming Service" data-vi="Dịch Vụ Chăm Sóc Thú Cưng">Dịch Vụ Chăm Sóc Thú Cưng</h3>
-                        <p data-en="Beautiful website for pet grooming service with booking system" data-vi="Website đẹp cho dịch vụ chăm sóc thú cưng với hệ thống đặt lịch">
-                            Website đẹp cho dịch vụ chăm sóc thú cưng với hệ thống đặt lịch
-                        </p>
-                    </div>
-                </div>
-                <div class="portfolio-item">
-                    <div class="portfolio-preview">
-                        <iframe src="https://ui-ux-pro-max-skill.nextlevelbuilder.io/demo/ai-chatbot-platform" loading="lazy"></iframe>
-                        <div class="portfolio-overlay">
-                            <a href="https://ui-ux-pro-max-skill.nextlevelbuilder.io/demo/ai-chatbot-platform" target="_blank" class="portfolio-link">
-                                <i class="fas fa-external-link-alt"></i>
-                                <span data-en="View Live" data-vi="Xem Demo">Xem Demo</span>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="portfolio-info">
-                        <h3 data-en="AI Chatbot Platform" data-vi="Nền Tảng AI Chatbot">Nền Tảng AI Chatbot</h3>
-                        <p data-en="Advanced AI-powered chatbot solution for businesses" data-vi="Giải pháp chatbot AI tiên tiến cho doanh nghiệp">
-                            Giải pháp chatbot AI tiên tiến cho doanh nghiệp
-                        </p>
-                    </div>
-                </div>
-                <div class="portfolio-item">
-                    <div class="portfolio-preview">
-                        <iframe src="https://ui-ux-pro-max-skill.nextlevelbuilder.io/demo/luxury-ecommerce" loading="lazy"></iframe>
-                        <div class="portfolio-overlay">
-                            <a href="https://ui-ux-pro-max-skill.nextlevelbuilder.io/demo/luxury-ecommerce" target="_blank" class="portfolio-link">
-                                <i class="fas fa-external-link-alt"></i>
-                                <span data-en="View Live" data-vi="Xem Demo">Xem Demo</span>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="portfolio-info">
-                        <h3 data-en="Luxury E-Commerce" data-vi="Thương Mại Điện Tử Cao Cấp">Thương Mại Điện Tử Cao Cấp</h3>
-                        <p data-en="Elegant online store for luxury products and brands" data-vi="Cửa hàng trực tuyến sang trọng cho sản phẩm và thương hiệu cao cấp">
-                            Cửa hàng trực tuyến sang trọng cho sản phẩm và thương hiệu cao cấp
-                        </p>
-                    </div>
-                </div>
-                <div class="portfolio-item">
-                    <div class="portfolio-preview">
-                        <iframe src="https://ui-ux-pro-max-skill.nextlevelbuilder.io/demo/fintech-crypto" loading="lazy"></iframe>
-                        <div class="portfolio-overlay">
-                            <a href="https://ui-ux-pro-max-skill.nextlevelbuilder.io/demo/fintech-crypto" target="_blank" class="portfolio-link">
-                                <i class="fas fa-external-link-alt"></i>
-                                <span data-en="View Live" data-vi="Xem Demo">Xem Demo</span>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="portfolio-info">
-                        <h3 data-en="Fintech & Crypto" data-vi="Fintech & Tiền Mã Hóa">Fintech & Tiền Mã Hóa</h3>
-                        <p data-en="Secure platform for cryptocurrency trading and finance" data-vi="Nền tảng an toàn cho giao dịch tiền mã hóa và tài chính">
-                            Nền tảng an toàn cho giao dịch tiền mã hóa và tài chính
-                        </p>
-                    </div>
-                </div>
+              </div>
             </div>
+            
+            <div class="absolute -bottom-6 -left-6 bg-white rounded-2xl shadow-xl p-4 animate-float z-30" style="animation-delay: 1s;">
+              <div class="flex items-center gap-3">
+                <div class="w-10 h-10 bg-accent/10 rounded-full flex items-center justify-center">
+                  <i data-lucide="users" class="w-6 h-6 text-accent"></i>
+                </div>
+                <div>
+                  <div class="text-xs text-text-muted" data-i18n="hero.float2.label">Người dùng</div>
+                  <div class="font-bold text-primary">+2.5K</div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-    </section>
-
-    <!-- Pricing Section -->
-    <section id="pricing" class="pricing">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title" data-en="Pricing Plans" data-vi="Bảng Giá Dịch Vụ">Bảng Giá Dịch Vụ</h2>
-                <p class="section-subtitle" data-en="Choose the perfect plan for your business needs" data-vi="Chọn gói phù hợp với nhu cầu doanh nghiệp của bạn">
-                    Chọn gói phù hợp với nhu cầu doanh nghiệp của bạn
-                </p>
-            </div>
-            <div class="pricing-grid">
-                <div class="pricing-card">
-                    <div class="pricing-header">
-                        <h3 data-en="Starter" data-vi="Cơ Bản">Cơ Bản</h3>
-                        <div class="price">
-                            <span class="currency">₫</span>
-                            <span class="amount">5,000,000</span>
-                        </div>
-                        <p class="price-subtitle" data-en="Perfect for small businesses" data-vi="Hoàn hảo cho doanh nghiệp nhỏ">
-                            Hoàn hảo cho doanh nghiệp nhỏ
-                        </p>
-                    </div>
-                    <ul class="pricing-features">
-                        <li><i class="fas fa-check"></i><span data-en="Up to 5 pages" data-vi="Tối đa 5 trang">Tối đa 5 trang</span></li>
-                        <li><i class="fas fa-check"></i><span data-en="Responsive design" data-vi="Thiết kế responsive">Thiết kế responsive</span></li>
-                        <li><i class="fas fa-check"></i><span data-en="Basic SEO" data-vi="SEO cơ bản">SEO cơ bản</span></li>
-                        <li><i class="fas fa-check"></i><span data-en="Contact form" data-vi="Form liên hệ">Form liên hệ</span></li>
-                        <li><i class="fas fa-check"></i><span data-en="1 month support" data-vi="Hỗ trợ 1 tháng">Hỗ trợ 1 tháng</span></li>
-                        <li class="disabled"><i class="fas fa-times"></i><span data-en="E-commerce features" data-vi="Tính năng thương mại">Tính năng thương mại</span></li>
-                        <li class="disabled"><i class="fas fa-times"></i><span data-en="Custom CMS" data-vi="CMS tùy chỉnh">CMS tùy chỉnh</span></li>
-                    </ul>
-                    <a href="#contact" class="btn btn-outline" data-en="Get Started" data-vi="Bắt đầu">Bắt đầu</a>
-                </div>
-                <div class="pricing-card featured">
-                    <div class="popular-badge" data-en="Most Popular" data-vi="Phổ biến nhất">Phổ biến nhất</div>
-                    <div class="pricing-header">
-                        <h3 data-en="Professional" data-vi="Chuyên Nghiệp">Chuyên Nghiệp</h3>
-                        <div class="price">
-                            <span class="currency">₫</span>
-                            <span class="amount">12,000,000</span>
-                        </div>
-                        <p class="price-subtitle" data-en="Best for growing businesses" data-vi="Tốt nhất cho doanh nghiệp phát triển">
-                            Tốt nhất cho doanh nghiệp phát triển
-                        </p>
-                    </div>
-                    <ul class="pricing-features">
-                        <li><i class="fas fa-check"></i><span data-en="Up to 15 pages" data-vi="Tối đa 15 trang">Tối đa 15 trang</span></li>
-                        <li><i class="fas fa-check"></i><span data-en="Premium design" data-vi="Thiết kế cao cấp">Thiết kế cao cấp</span></li>
-                        <li><i class="fas fa-check"></i><span data-en="Advanced SEO" data-vi="SEO nâng cao">SEO nâng cao</span></li>
-                        <li><i class="fas fa-check"></i><span data-en="Interactive features" data-vi="Tính năng tương tác">Tính năng tương tác</span></li>
-                        <li><i class="fas fa-check"></i><span data-en="3 months support" data-vi="Hỗ trợ 3 tháng">Hỗ trợ 3 tháng</span></li>
-                        <li><i class="fas fa-check"></i><span data-en="Basic e-commerce" data-vi="Thương mại cơ bản">Thương mại cơ bản</span></li>
-                        <li><i class="fas fa-check"></i><span data-en="Content management" data-vi="Quản lý nội dung">Quản lý nội dung</span></li>
-                    </ul>
-                    <a href="#contact" class="btn btn-primary" data-en="Get Started" data-vi="Bắt đầu">Bắt đầu</a>
-                </div>
-                <div class="pricing-card">
-                    <div class="pricing-header">
-                        <h3 data-en="Enterprise" data-vi="Doanh Nghiệp">Doanh Nghiệp</h3>
-                        <div class="price">
-                            <span class="currency">₫</span>
-                            <span class="amount">25,000,000</span>
-                            <span class="plus">+</span>
-                        </div>
-                        <p class="price-subtitle" data-en="For large-scale projects" data-vi="Cho dự án quy mô lớn">
-                            Cho dự án quy mô lớn
-                        </p>
-                    </div>
-                    <ul class="pricing-features">
-                        <li><i class="fas fa-check"></i><span data-en="Unlimited pages" data-vi="Không giới hạn trang">Không giới hạn trang</span></li>
-                        <li><i class="fas fa-check"></i><span data-en="Custom design" data-vi="Thiết kế tùy chỉnh">Thiết kế tùy chỉnh</span></li>
-                        <li><i class="fas fa-check"></i><span data-en="Premium SEO" data-vi="SEO cao cấp">SEO cao cấp</span></li>
-                        <li><i class="fas fa-check"></i><span data-en="Advanced features" data-vi="Tính năng nâng cao">Tính năng nâng cao</span></li>
-                        <li><i class="fas fa-check"></i><span data-en="12 months support" data-vi="Hỗ trợ 12 tháng">Hỗ trợ 12 tháng</span></li>
-                        <li><i class="fas fa-check"></i><span data-en="Full e-commerce" data-vi="Thương mại đầy đủ">Thương mại đầy đủ</span></li>
-                        <li><i class="fas fa-check"></i><span data-en="Custom CMS & API" data-vi="CMS & API tùy chỉnh">CMS & API tùy chỉnh</span></li>
-                    </ul>
-                    <a href="#contact" class="btn btn-outline" data-en="Contact Us" data-vi="Liên hệ">Liên hệ</a>
-                </div>
-            </div>
+      </div>
+    </div>
+    
+    <!-- Scroll indicator -->
+    <div class="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce-subtle">
+      <a href="#services" class="flex flex-col items-center gap-2 text-text-muted hover:text-cta transition-colors duration-200 cursor-pointer">
+        <span class="text-sm" data-i18n="hero.scroll">Khám phá thêm</span>
+        <i data-lucide="chevron-down" class="w-5 h-5"></i>
+      </a>
+    </div>
+  </section>
+  
+  <!-- Services Section -->
+  <section id="services" class="py-20 px-4 bg-white">
+    <div class="max-w-7xl mx-auto">
+      <div class="text-center mb-16">
+        <span class="inline-block px-4 py-2 bg-cta/10 text-cta rounded-full text-sm font-medium mb-4" data-i18n="services.badge">Dịch vụ của chúng tôi</span>
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-primary mb-4" data-i18n="services.title">Giải pháp Web toàn diện</h2>
+        <p class="text-text-muted text-lg max-w-2xl mx-auto" data-i18n="services.subtitle">Từ ý tưởng đến sản phẩm hoàn chỉnh, chúng tôi đồng hành cùng bạn trong mọi giai đoạn</p>
+      </div>
+      
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Service 1 -->
+        <div class="group bg-surface rounded-2xl p-8 hover:bg-gradient-to-br hover:from-cta hover:to-accent transition-all duration-300 cursor-pointer">
+          <div class="w-14 h-14 bg-cta/10 group-hover:bg-white/20 rounded-xl flex items-center justify-center mb-6 transition-colors duration-300">
+            <i data-lucide="layout" class="w-7 h-7 text-cta group-hover:text-white transition-colors duration-300"></i>
+          </div>
+          <h3 class="text-xl font-bold text-primary group-hover:text-white mb-3 transition-colors duration-300" data-i18n="services.item1.title">Thiết kế UI/UX</h3>
+          <p class="text-text-muted group-hover:text-white/80 transition-colors duration-300" data-i18n="services.item1.desc">Thiết kế giao diện người dùng đẹp mắt, trực quan và tối ưu trải nghiệm.</p>
         </div>
-    </section>
-
-    <!-- Testimonials Section -->
-    <section class="testimonials">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title" data-en="What Our Clients Say" data-vi="Khách Hàng Nói Gì">Khách Hàng Nói Gì</h2>
-                <p class="section-subtitle" data-en="Real feedback from satisfied customers" data-vi="Phản hồi thật từ khách hàng hài lòng">
-                    Phản hồi thật từ khách hàng hài lòng
-                </p>
-            </div>
-            <div class="testimonials-grid">
-                <div class="testimonial-card">
-                    <div class="stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <p class="testimonial-text" data-en="EZpage delivered an exceptional website that exceeded our expectations. Professional team, timely delivery, and excellent support!" data-vi="EZpage đã tạo ra một website xuất sắc vượt mong đợi. Đội ngũ chuyên nghiệp, giao hàng đúng hạn, hỗ trợ tuyệt vời!">
-                        EZpage đã tạo ra một website xuất sắc vượt mong đợi. Đội ngũ chuyên nghiệp, giao hàng đúng hạn, hỗ trợ tuyệt vời!
-                    </p>
-                    <div class="testimonial-author">
-                        <div class="author-avatar">
-                            <i class="fas fa-user"></i>
-                        </div>
-                        <div class="author-info">
-                            <h4 data-en="Nguyen Van A" data-vi="Nguyễn Văn A">Nguyễn Văn A</h4>
-                            <p data-en="CEO, TechCorp Vietnam" data-vi="CEO, TechCorp Vietnam">CEO, TechCorp Vietnam</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="testimonial-card">
-                    <div class="stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <p class="testimonial-text" data-en="Amazing work! Our e-commerce site is beautiful and functions perfectly. Sales increased by 150% in just 3 months!" data-vi="Công việc tuyệt vời! Website thương mại của chúng tôi đẹp và hoạt động hoàn hảo. Doanh số tăng 150% chỉ sau 3 tháng!">
-                        Công việc tuyệt vời! Website thương mại của chúng tôi đẹp và hoạt động hoàn hảo. Doanh số tăng 150% chỉ sau 3 tháng!
-                    </p>
-                    <div class="testimonial-author">
-                        <div class="author-avatar">
-                            <i class="fas fa-user"></i>
-                        </div>
-                        <div class="author-info">
-                            <h4 data-en="Tran Thi B" data-vi="Trần Thị B">Trần Thị B</h4>
-                            <p data-en="Founder, Fashion Store Online" data-vi="Founder, Fashion Store Online">Founder, Fashion Store Online</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="testimonial-card">
-                    <div class="stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <p class="testimonial-text" data-en="Highly recommended! EZpage understood our vision and created a website that perfectly represents our brand. Excellent value for money." data-vi="Rất đáng giới thiệu! EZpage hiểu tầm nhìn của chúng tôi và tạo ra website thể hiện hoàn hảo thương hiệu. Giá trị tuyệt vời cho tiền bỏ ra.">
-                        Rất đáng giới thiệu! EZpage hiểu tầm nhìn của chúng tôi và tạo ra website thể hiện hoàn hảo thương hiệu. Giá trị tuyệt vời cho tiền bỏ ra.
-                    </p>
-                    <div class="testimonial-author">
-                        <div class="author-avatar">
-                            <i class="fas fa-user"></i>
-                        </div>
-                        <div class="author-info">
-                            <h4 data-en="Le Van C" data-vi="Lê Văn C">Lê Văn C</h4>
-                            <p data-en="Marketing Director, EduTech Solutions" data-vi="Giám Đốc Marketing, EduTech Solutions">Giám Đốc Marketing, EduTech Solutions</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        
+        <!-- Service 2 -->
+        <div class="group bg-surface rounded-2xl p-8 hover:bg-gradient-to-br hover:from-cta hover:to-accent transition-all duration-300 cursor-pointer">
+          <div class="w-14 h-14 bg-cta/10 group-hover:bg-white/20 rounded-xl flex items-center justify-center mb-6 transition-colors duration-300">
+            <i data-lucide="code-2" class="w-7 h-7 text-cta group-hover:text-white transition-colors duration-300"></i>
+          </div>
+          <h3 class="text-xl font-bold text-primary group-hover:text-white mb-3 transition-colors duration-300" data-i18n="services.item2.title">Phát triển Web</h3>
+          <p class="text-text-muted group-hover:text-white/80 transition-colors duration-300" data-i18n="services.item2.desc">Xây dựng website hiện đại với công nghệ tiên tiến, bảo mật cao.</p>
         </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="contact">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title" data-en="Request a Quote" data-vi="Yêu Cầu Báo Giá">Yêu Cầu Báo Giá</h2>
-                <p class="section-subtitle" data-en="Let's discuss your project and get started today" data-vi="Hãy thảo luận về dự án của bạn và bắt đầu ngay hôm nay">
-                    Hãy thảo luận về dự án của bạn và bắt đầu ngay hôm nay
-                </p>
-            </div>
-            <div class="contact-content">
-                <div class="contact-info">
-                    <div class="info-card">
-                        <i class="fas fa-envelope"></i>
-                        <h3 data-en="Email Us" data-vi="Email">Email</h3>
-                        <p>contact@ezpage.vn</p>
-                    </div>
-                    <div class="info-card">
-                        <i class="fas fa-phone"></i>
-                        <h3 data-en="Call Us" data-vi="Điện Thoại">Điện Thoại</h3>
-                        <p>+84 123 456 789</p>
-                    </div>
-                    <div class="info-card">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <h3 data-en="Visit Us" data-vi="Địa Chỉ">Địa Chỉ</h3>
-                        <p data-en="Ho Chi Minh City, Vietnam" data-vi="Tp. Hồ Chí Minh, Việt Nam">Tp. Hồ Chí Minh, Việt Nam</p>
-                    </div>
-                    <div class="social-links">
-                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
-                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                    </div>
-                </div>
-                <form class="contact-form" id="contactForm">
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="name" data-en="Full Name *" data-vi="Họ và Tên *">Họ và Tên *</label>
-                            <input type="text" id="name" name="name" required placeholder="John Doe">
-                        </div>
-                        <div class="form-group">
-                            <label for="email" data-en="Email Address *" data-vi="Địa Chỉ Email *">Địa Chỉ Email *</label>
-                            <input type="email" id="email" name="email" required placeholder="email@example.com">
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label for="websiteType" data-en="Website Type *" data-vi="Loại Website *">Loại Website *</label>
-                        <select id="websiteType" name="websiteType" required>
-                            <option value="" data-en="Select website type" data-vi="Chọn loại website">Chọn loại website</option>
-                            <option value="corporate" data-en="Corporate Website" data-vi="Website Doanh Nghiệp">Website Doanh Nghiệp</option>
-                            <option value="ecommerce" data-en="E-Commerce Store" data-vi="Cửa Hàng Thương Mại">Cửa Hàng Thương Mại</option>
-                            <option value="portfolio" data-en="Portfolio/Personal" data-vi="Portfolio/Cá Nhân">Portfolio/Cá Nhân</option>
-                            <option value="blog" data-en="Blog/News" data-vi="Blog/Tin Tức">Blog/Tin Tức</option>
-                            <option value="landing" data-en="Landing Page" data-vi="Landing Page">Landing Page</option>
-                            <option value="custom" data-en="Custom Solution" data-vi="Giải Pháp Tùy Chỉnh">Giải Pháp Tùy Chỉnh</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="message" data-en="Project Details *" data-vi="Yêu Cầu Chi Tiết *">Yêu Cầu Chi Tiết *</label>
-                        <textarea id="message" name="message" rows="6" required placeholder="Tell us about your project..."></textarea>
-                    </div>
-                    <button type="submit" class="btn btn-primary btn-submit">
-                        <span data-en="Send Request" data-vi="Gửi Yêu Cầu">Gửi Yêu Cầu</span>
-                        <i class="fas fa-paper-plane"></i>
-                    </button>
-                    <div class="form-message" id="formMessage"></div>
-                </form>
-            </div>
+        
+        <!-- Service 3 -->
+        <div class="group bg-surface rounded-2xl p-8 hover:bg-gradient-to-br hover:from-cta hover:to-accent transition-all duration-300 cursor-pointer">
+          <div class="w-14 h-14 bg-cta/10 group-hover:bg-white/20 rounded-xl flex items-center justify-center mb-6 transition-colors duration-300">
+            <i data-lucide="shopping-cart" class="w-7 h-7 text-cta group-hover:text-white transition-colors duration-300"></i>
+          </div>
+          <h3 class="text-xl font-bold text-primary group-hover:text-white mb-3 transition-colors duration-300" data-i18n="services.item3.title">E-commerce</h3>
+          <p class="text-text-muted group-hover:text-white/80 transition-colors duration-300" data-i18n="services.item3.desc">Giải pháp thương mại điện tử tích hợp thanh toán, quản lý kho hàng.</p>
         </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <div class="logo">
-                        <i class="fas fa-code"></i>
-                        <span>EZ<span class="highlight">page</span></span>
-                    </div>
-                    <p data-en="Professional web development solutions for your business success" data-vi="Giải pháp phát triển web chuyên nghiệp cho sự thành công doanh nghiệp">
-                        Giải pháp phát triển web chuyên nghiệp cho sự thành công doanh nghiệp
-                    </p>
-                </div>
-                <div class="footer-section">
-                    <h4 data-en="Quick Links" data-vi="Liên Kết">Liên Kết</h4>
-                    <ul>
-                        <li><a href="#services" data-en="Services" data-vi="Dịch vụ">Dịch vụ</a></li>
-                        <li><a href="#portfolio" data-en="Portfolio" data-vi="Dự án">Dự án</a></li>
-                        <li><a href="#pricing" data-en="Pricing" data-vi="Bảng giá">Bảng giá</a></li>
-                        <li><a href="#contact" data-en="Contact" data-vi="Liên hệ">Liên hệ</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h4 data-en="Services" data-vi="Dịch Vụ">Dịch Vụ</h4>
-                    <ul>
-                        <li><a href="#" data-en="Web Design" data-vi="Thiết kế Web">Thiết kế Web</a></li>
-                        <li><a href="#" data-en="Web Development" data-vi="Phát triển Web">Phát triển Web</a></li>
-                        <li><a href="#" data-en="E-Commerce" data-vi="Thương mại điện tử">Thương mại điện tử</a></li>
-                        <li><a href="#" data-en="SEO Services" data-vi="Dịch vụ SEO">Dịch vụ SEO</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h4 data-en="Newsletter" data-vi="Đăng Ký">Đăng Ký</h4>
-                    <p data-en="Subscribe to get latest updates" data-vi="Đăng ký để nhận tin tức mới nhất">
-                        Đăng ký để nhận tin tức mới nhất
-                    </p>
-                    <form class="newsletter-form">
-                        <input type="email" placeholder="Your email">
-                        <button type="submit"><i class="fas fa-arrow-right"></i></button>
-                    </form>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2026 EZpage. <span data-en="All rights reserved." data-vi="Bảo lưu mọi quyền.">Bảo lưu mọi quyền.</span></p>
-            </div>
+        
+        <!-- Service 4 -->
+        <div class="group bg-surface rounded-2xl p-8 hover:bg-gradient-to-br hover:from-cta hover:to-accent transition-all duration-300 cursor-pointer">
+          <div class="w-14 h-14 bg-cta/10 group-hover:bg-white/20 rounded-xl flex items-center justify-center mb-6 transition-colors duration-300">
+            <i data-lucide="smartphone" class="w-7 h-7 text-cta group-hover:text-white transition-colors duration-300"></i>
+          </div>
+          <h3 class="text-xl font-bold text-primary group-hover:text-white mb-3 transition-colors duration-300" data-i18n="services.item4.title">Responsive Design</h3>
+          <p class="text-text-muted group-hover:text-white/80 transition-colors duration-300" data-i18n="services.item4.desc">Tối ưu hiển thị trên mọi thiết bị từ điện thoại đến máy tính.</p>
         </div>
-    </footer>
-
-    <script src="script.js"></script>
+        
+        <!-- Service 5 -->
+        <div class="group bg-surface rounded-2xl p-8 hover:bg-gradient-to-br hover:from-cta hover:to-accent transition-all duration-300 cursor-pointer">
+          <div class="w-14 h-14 bg-cta/10 group-hover:bg-white/20 rounded-xl flex items-center justify-center mb-6 transition-colors duration-300">
+            <i data-lucide="search" class="w-7 h-7 text-cta group-hover:text-white transition-colors duration-300"></i>
+          </div>
+          <h3 class="text-xl font-bold text-primary group-hover:text-white mb-3 transition-colors duration-300" data-i18n="services.item5.title">SEO & Marketing</h3>
+          <p class="text-text-muted group-hover:text-white/80 transition-colors duration-300" data-i18n="services.item5.desc">Tối ưu website cho công cụ tìm kiếm, tăng visibility online.</p>
+        </div>
+        
+        <!-- Service 6 -->
+        <div class="group bg-surface rounded-2xl p-8 hover:bg-gradient-to-br hover:from-cta hover:to-accent transition-all duration-300 cursor-pointer">
+          <div class="w-14 h-14 bg-cta/10 group-hover:bg-white/20 rounded-xl flex items-center justify-center mb-6 transition-colors duration-300">
+            <i data-lucide="headphones" class="w-7 h-7 text-cta group-hover:text-white transition-colors duration-300"></i>
+          </div>
+          <h3 class="text-xl font-bold text-primary group-hover:text-white mb-3 transition-colors duration-300" data-i18n="services.item6.title">Hỗ trợ & Bảo trì</h3>
+          <p class="text-text-muted group-hover:text-white/80 transition-colors duration-300" data-i18n="services.item6.desc">Đội ngũ hỗ trợ 24/7, bảo trì và cập nhật website thường xuyên.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Portfolio Section -->
+  <section id="portfolio" class="py-20 px-4 bg-surface geo-pattern">
+    <div class="max-w-7xl mx-auto">
+      <div class="text-center mb-16">
+        <span class="inline-block px-4 py-2 bg-accent/10 text-accent rounded-full text-sm font-medium mb-4" data-i18n="portfolio.badge">Dự án nổi bật</span>
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-primary mb-4" data-i18n="portfolio.title">Sản phẩm đã phát triển</h2>
+        <p class="text-text-muted text-lg max-w-2xl mx-auto" data-i18n="portfolio.subtitle">Khám phá những dự án chúng tôi đã thực hiện cho khách hàng</p>
+      </div>
+      
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Portfolio Item 1 -->
+        <div class="portfolio-card bg-white rounded-2xl overflow-hidden shadow-lg cursor-pointer group">
+          <div class="preview-container h-56 bg-surface-dark">
+            <iframe 
+              src="https://ui-ux-pro-max-skill.nextlevelbuilder.io/demo/saas-analytics-dashboard" 
+              class="preview-iframe"
+              title="SaaS Analytics Dashboard"
+              loading="lazy"
+            ></iframe>
+          </div>
+          <div class="p-6">
+            <div class="flex items-center gap-2 mb-3">
+              <span class="px-3 py-1 bg-cta/10 text-cta text-xs font-medium rounded-full">SaaS</span>
+              <span class="px-3 py-1 bg-accent/10 text-accent text-xs font-medium rounded-full">Dashboard</span>
+            </div>
+            <h3 class="text-xl font-bold text-primary mb-2" data-i18n="portfolio.item1.title">Analytics Dashboard</h3>
+            <p class="text-text-muted text-sm mb-4" data-i18n="portfolio.item1.desc">Bảng điều khiển phân tích dữ liệu thời gian thực cho doanh nghiệp SaaS.</p>
+            <a href="https://ui-ux-pro-max-skill.nextlevelbuilder.io/demo/saas-analytics-dashboard" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-cta font-medium hover:gap-3 transition-all duration-200">
+              <span data-i18n="portfolio.viewProject">Xem dự án</span>
+              <i data-lucide="external-link" class="w-4 h-4"></i>
+            </a>
+          </div>
+        </div>
+        
+        <!-- Portfolio Item 2 -->
+        <div class="portfolio-card bg-white rounded-2xl overflow-hidden shadow-lg cursor-pointer group">
+          <div class="preview-container h-56 bg-surface-dark">
+            <iframe 
+              src="https://ui-ux-pro-max-skill.nextlevelbuilder.io/demo/educational-platform" 
+              class="preview-iframe"
+              title="Educational Platform"
+              loading="lazy"
+            ></iframe>
+          </div>
+          <div class="p-6">
+            <div class="flex items-center gap-2 mb-3">
+              <span class="px-3 py-1 bg-success/10 text-success text-xs font-medium rounded-full">Education</span>
+              <span class="px-3 py-1 bg-warning/10 text-warning text-xs font-medium rounded-full">Platform</span>
+            </div>
+            <h3 class="text-xl font-bold text-primary mb-2" data-i18n="portfolio.item2.title">Educational Platform</h3>
+            <p class="text-text-muted text-sm mb-4" data-i18n="portfolio.item2.desc">Nền tảng học trực tuyến với hệ thống quản lý khóa học đa dạng.</p>
+            <a href="https://ui-ux-pro-max-skill.nextlevelbuilder.io/demo/educational-platform" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-cta font-medium hover:gap-3 transition-all duration-200">
+              <span data-i18n="portfolio.viewProject">Xem dự án</span>
+              <i data-lucide="external-link" class="w-4 h-4"></i>
+            </a>
+          </div>
+        </div>
+        
+        <!-- Portfolio Item 3 -->
+        <div class="portfolio-card bg-white rounded-2xl overflow-hidden shadow-lg cursor-pointer group">
+          <div class="preview-container h-56 bg-surface-dark">
+            <iframe 
+              src="https://ui-ux-pro-max-skill.nextlevelbuilder.io/demo/pet-grooming" 
+              class="preview-iframe"
+              title="Pet Grooming Service"
+              loading="lazy"
+            ></iframe>
+          </div>
+          <div class="p-6">
+            <div class="flex items-center gap-2 mb-3">
+              <span class="px-3 py-1 bg-pink-100 text-pink-600 text-xs font-medium rounded-full">Service</span>
+              <span class="px-3 py-1 bg-orange-100 text-orange-600 text-xs font-medium rounded-full">Pet Care</span>
+            </div>
+            <h3 class="text-xl font-bold text-primary mb-2" data-i18n="portfolio.item3.title">Pet Grooming</h3>
+            <p class="text-text-muted text-sm mb-4" data-i18n="portfolio.item3.desc">Website dịch vụ chăm sóc thú cưng với hệ thống đặt lịch online.</p>
+            <a href="https://ui-ux-pro-max-skill.nextlevelbuilder.io/demo/pet-grooming" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-cta font-medium hover:gap-3 transition-all duration-200">
+              <span data-i18n="portfolio.viewProject">Xem dự án</span>
+              <i data-lucide="external-link" class="w-4 h-4"></i>
+            </a>
+          </div>
+        </div>
+        
+        <!-- Portfolio Item 4 -->
+        <div class="portfolio-card bg-white rounded-2xl overflow-hidden shadow-lg cursor-pointer group">
+          <div class="preview-container h-56 bg-surface-dark">
+            <iframe 
+              src="https://ui-ux-pro-max-skill.nextlevelbuilder.io/demo/ai-chatbot-platform" 
+              class="preview-iframe"
+              title="AI Chatbot Platform"
+              loading="lazy"
+            ></iframe>
+          </div>
+          <div class="p-6">
+            <div class="flex items-center gap-2 mb-3">
+              <span class="px-3 py-1 bg-purple-100 text-purple-600 text-xs font-medium rounded-full">AI</span>
+              <span class="px-3 py-1 bg-indigo-100 text-indigo-600 text-xs font-medium rounded-full">Chatbot</span>
+            </div>
+            <h3 class="text-xl font-bold text-primary mb-2" data-i18n="portfolio.item4.title">AI Chatbot Platform</h3>
+            <p class="text-text-muted text-sm mb-4" data-i18n="portfolio.item4.desc">Nền tảng chatbot AI thông minh với khả năng tùy biến cao.</p>
+            <a href="https://ui-ux-pro-max-skill.nextlevelbuilder.io/demo/ai-chatbot-platform" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-cta font-medium hover:gap-3 transition-all duration-200">
+              <span data-i18n="portfolio.viewProject">Xem dự án</span>
+              <i data-lucide="external-link" class="w-4 h-4"></i>
+            </a>
+          </div>
+        </div>
+        
+        <!-- Portfolio Item 5 -->
+        <div class="portfolio-card bg-white rounded-2xl overflow-hidden shadow-lg cursor-pointer group">
+          <div class="preview-container h-56 bg-surface-dark">
+            <iframe 
+              src="https://ui-ux-pro-max-skill.nextlevelbuilder.io/demo/luxury-ecommerce" 
+              class="preview-iframe"
+              title="Luxury E-commerce"
+              loading="lazy"
+            ></iframe>
+          </div>
+          <div class="p-6">
+            <div class="flex items-center gap-2 mb-3">
+              <span class="px-3 py-1 bg-amber-100 text-amber-700 text-xs font-medium rounded-full">Luxury</span>
+              <span class="px-3 py-1 bg-yellow-100 text-yellow-700 text-xs font-medium rounded-full">E-commerce</span>
+            </div>
+            <h3 class="text-xl font-bold text-primary mb-2" data-i18n="portfolio.item5.title">Luxury E-commerce</h3>
+            <p class="text-text-muted text-sm mb-4" data-i18n="portfolio.item5.desc">Cửa hàng trực tuyến cao cấp với trải nghiệm mua sắm sang trọng.</p>
+            <a href="https://ui-ux-pro-max-skill.nextlevelbuilder.io/demo/luxury-ecommerce" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-cta font-medium hover:gap-3 transition-all duration-200">
+              <span data-i18n="portfolio.viewProject">Xem dự án</span>
+              <i data-lucide="external-link" class="w-4 h-4"></i>
+            </a>
+          </div>
+        </div>
+        
+        <!-- Portfolio Item 6 -->
+        <div class="portfolio-card bg-white rounded-2xl overflow-hidden shadow-lg cursor-pointer group">
+          <div class="preview-container h-56 bg-surface-dark">
+            <iframe 
+              src="https://ui-ux-pro-max-skill.nextlevelbuilder.io/demo/fintech-crypto" 
+              class="preview-iframe"
+              title="Fintech Crypto Platform"
+              loading="lazy"
+            ></iframe>
+          </div>
+          <div class="p-6">
+            <div class="flex items-center gap-2 mb-3">
+              <span class="px-3 py-1 bg-emerald-100 text-emerald-600 text-xs font-medium rounded-full">Fintech</span>
+              <span class="px-3 py-1 bg-blue-100 text-blue-600 text-xs font-medium rounded-full">Crypto</span>
+            </div>
+            <h3 class="text-xl font-bold text-primary mb-2" data-i18n="portfolio.item6.title">Fintech Crypto</h3>
+            <p class="text-text-muted text-sm mb-4" data-i18n="portfolio.item6.desc">Nền tảng giao dịch tiền điện tử với dashboard realtime.</p>
+            <a href="https://ui-ux-pro-max-skill.nextlevelbuilder.io/demo/fintech-crypto" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-cta font-medium hover:gap-3 transition-all duration-200">
+              <span data-i18n="portfolio.viewProject">Xem dự án</span>
+              <i data-lucide="external-link" class="w-4 h-4"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Clients/Testimonials Section -->
+  <section id="clients" class="py-20 px-4 bg-white">
+    <div class="max-w-7xl mx-auto">
+      <div class="text-center mb-16">
+        <span class="inline-block px-4 py-2 bg-success/10 text-success rounded-full text-sm font-medium mb-4" data-i18n="clients.badge">Khách hàng tiềm năng</span>
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-primary mb-4" data-i18n="clients.title">Được tin tưởng bởi</h2>
+        <p class="text-text-muted text-lg max-w-2xl mx-auto" data-i18n="clients.subtitle">Những doanh nghiệp hàng đầu đã đặt niềm tin vào EZpage</p>
+      </div>
+      
+      <!-- Client Logos -->
+      <div class="flex flex-wrap justify-center items-center gap-8 mb-16 opacity-70">
+        <div class="flex items-center gap-2 px-6 py-4 bg-surface rounded-xl">
+          <i data-lucide="building-2" class="w-8 h-8 text-secondary"></i>
+          <span class="font-semibold text-secondary">TechCorp</span>
+        </div>
+        <div class="flex items-center gap-2 px-6 py-4 bg-surface rounded-xl">
+          <i data-lucide="briefcase" class="w-8 h-8 text-secondary"></i>
+          <span class="font-semibold text-secondary">StartupVN</span>
+        </div>
+        <div class="flex items-center gap-2 px-6 py-4 bg-surface rounded-xl">
+          <i data-lucide="store" class="w-8 h-8 text-secondary"></i>
+          <span class="font-semibold text-secondary">ShopPro</span>
+        </div>
+        <div class="flex items-center gap-2 px-6 py-4 bg-surface rounded-xl">
+          <i data-lucide="graduation-cap" class="w-8 h-8 text-secondary"></i>
+          <span class="font-semibold text-secondary">EduHub</span>
+        </div>
+        <div class="flex items-center gap-2 px-6 py-4 bg-surface rounded-xl">
+          <i data-lucide="heart-pulse" class="w-8 h-8 text-secondary"></i>
+          <span class="font-semibold text-secondary">HealthPlus</span>
+        </div>
+      </div>
+      
+      <!-- Testimonials -->
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Testimonial 1 -->
+        <div class="bg-surface rounded-2xl p-8 relative">
+          <div class="absolute -top-4 left-8">
+            <div class="w-8 h-8 bg-gradient-to-br from-cta to-accent rounded-lg flex items-center justify-center">
+              <i data-lucide="quote" class="w-4 h-4 text-white"></i>
+            </div>
+          </div>
+          <p class="text-text-muted mt-4 mb-6" data-i18n="clients.testimonial1.text">"EZpage đã giúp chúng tôi xây dựng website bán hàng chuyên nghiệp, doanh số tăng 150% sau 3 tháng triển khai."</p>
+          <div class="flex items-center gap-4">
+            <div class="w-12 h-12 bg-gradient-to-br from-cta to-accent rounded-full flex items-center justify-center text-white font-bold">
+              NT
+            </div>
+            <div>
+              <div class="font-semibold text-primary" data-i18n="clients.testimonial1.name">Nguyễn Thành</div>
+              <div class="text-sm text-text-muted" data-i18n="clients.testimonial1.role">CEO, TechCorp</div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Testimonial 2 -->
+        <div class="bg-surface rounded-2xl p-8 relative">
+          <div class="absolute -top-4 left-8">
+            <div class="w-8 h-8 bg-gradient-to-br from-cta to-accent rounded-lg flex items-center justify-center">
+              <i data-lucide="quote" class="w-4 h-4 text-white"></i>
+            </div>
+          </div>
+          <p class="text-text-muted mt-4 mb-6" data-i18n="clients.testimonial2.text">"Đội ngũ EZpage rất chuyên nghiệp, tận tâm. Họ không chỉ làm đúng yêu cầu mà còn tư vấn thêm nhiều giải pháp hay."</p>
+          <div class="flex items-center gap-4">
+            <div class="w-12 h-12 bg-gradient-to-br from-accent to-success rounded-full flex items-center justify-center text-white font-bold">
+              LH
+            </div>
+            <div>
+              <div class="font-semibold text-primary" data-i18n="clients.testimonial2.name">Lê Hương</div>
+              <div class="text-sm text-text-muted" data-i18n="clients.testimonial2.role">Marketing Director, StartupVN</div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Testimonial 3 -->
+        <div class="bg-surface rounded-2xl p-8 relative">
+          <div class="absolute -top-4 left-8">
+            <div class="w-8 h-8 bg-gradient-to-br from-cta to-accent rounded-lg flex items-center justify-center">
+              <i data-lucide="quote" class="w-4 h-4 text-white"></i>
+            </div>
+          </div>
+          <p class="text-text-muted mt-4 mb-6" data-i18n="clients.testimonial3.text">"Website tải nhanh, thiết kế đẹp, khách hàng của tôi rất hài lòng. Tôi sẽ tiếp tục hợp tác lâu dài."</p>
+          <div class="flex items-center gap-4">
+            <div class="w-12 h-12 bg-gradient-to-br from-success to-emerald-400 rounded-full flex items-center justify-center text-white font-bold">
+              TM
+            </div>
+            <div>
+              <div class="font-semibold text-primary" data-i18n="clients.testimonial3.name">Trần Minh</div>
+              <div class="text-sm text-text-muted" data-i18n="clients.testimonial3.role">Founder, ShopPro</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Pricing Section -->
+  <section id="pricing" class="py-20 px-4 bg-surface geo-pattern">
+    <div class="max-w-7xl mx-auto">
+      <div class="text-center mb-16">
+        <span class="inline-block px-4 py-2 bg-warning/10 text-warning rounded-full text-sm font-medium mb-4" data-i18n="pricing.badge">Bảng giá</span>
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-primary mb-4" data-i18n="pricing.title">Gói dịch vụ phù hợp</h2>
+        <p class="text-text-muted text-lg max-w-2xl mx-auto" data-i18n="pricing.subtitle">Chọn gói dịch vụ phù hợp với nhu cầu và ngân sách của bạn</p>
+      </div>
+      
+      <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+        <!-- Starter Plan -->
+        <div class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 relative">
+          <div class="text-center mb-8">
+            <div class="w-16 h-16 bg-cta/10 rounded-xl flex items-center justify-center mx-auto mb-4">
+              <i data-lucide="sparkles" class="w-8 h-8 text-cta"></i>
+            </div>
+            <h3 class="text-2xl font-bold text-primary mb-2" data-i18n="pricing.starter.name">Starter</h3>
+            <p class="text-text-muted text-sm" data-i18n="pricing.starter.desc">Phù hợp cho cá nhân & startup</p>
+          </div>
+          
+          <div class="mb-8">
+            <div class="flex items-baseline justify-center gap-2 mb-2">
+              <span class="text-4xl font-bold text-primary" data-i18n="pricing.starter.price">15</span>
+              <span class="text-xl text-text-muted">triệu</span>
+            </div>
+            <p class="text-sm text-text-muted text-center" data-i18n="pricing.starter.period">VNĐ / dự án</p>
+          </div>
+          
+          <ul class="space-y-4 mb-8">
+            <li class="flex items-start gap-3">
+              <i data-lucide="check" class="w-5 h-5 text-success flex-shrink-0 mt-0.5"></i>
+              <span class="text-text-muted text-sm" data-i18n="pricing.starter.feature1">Website 5-10 trang</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <i data-lucide="check" class="w-5 h-5 text-success flex-shrink-0 mt-0.5"></i>
+              <span class="text-text-muted text-sm" data-i18n="pricing.starter.feature2">Thiết kế responsive</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <i data-lucide="check" class="w-5 h-5 text-success flex-shrink-0 mt-0.5"></i>
+              <span class="text-text-muted text-sm" data-i18n="pricing.starter.feature3">Tối ưu SEO cơ bản</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <i data-lucide="check" class="w-5 h-5 text-success flex-shrink-0 mt-0.5"></i>
+              <span class="text-text-muted text-sm" data-i18n="pricing.starter.feature4">Bảo hành 3 tháng</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <i data-lucide="check" class="w-5 h-5 text-success flex-shrink-0 mt-0.5"></i>
+              <span class="text-text-muted text-sm" data-i18n="pricing.starter.feature5">Hỗ trợ email</span>
+            </li>
+          </ul>
+          
+          <a href="#contact" class="block w-full bg-white border-2 border-primary text-primary px-6 py-3 rounded-xl font-semibold text-center hover:bg-primary hover:text-white transition-all duration-300 cursor-pointer focus-visible-ring">
+            <span data-i18n="pricing.cta">Chọn gói</span>
+          </a>
+        </div>
+        
+        <!-- Professional Plan (Most Popular) -->
+        <div class="bg-gradient-to-br from-cta to-accent rounded-2xl p-8 shadow-xl hover:shadow-2xl transition-all duration-300 relative transform scale-105 md:scale-110">
+          <!-- Popular Badge -->
+          <div class="absolute -top-4 left-1/2 -translate-x-1/2">
+            <span class="bg-warning text-white px-4 py-1 rounded-full text-xs font-semibold" data-i18n="pricing.professional.badge">Phổ biến nhất</span>
+          </div>
+          
+          <div class="text-center mb-8">
+            <div class="w-16 h-16 bg-white/20 rounded-xl flex items-center justify-center mx-auto mb-4">
+              <i data-lucide="zap" class="w-8 h-8 text-white"></i>
+            </div>
+            <h3 class="text-2xl font-bold text-white mb-2" data-i18n="pricing.professional.name">Professional</h3>
+            <p class="text-white/80 text-sm" data-i18n="pricing.professional.desc">Phù hợp cho doanh nghiệp vừa</p>
+          </div>
+          
+          <div class="mb-8">
+            <div class="flex items-baseline justify-center gap-2 mb-2">
+              <span class="text-4xl font-bold text-white" data-i18n="pricing.professional.price">35</span>
+              <span class="text-xl text-white/80">triệu</span>
+            </div>
+            <p class="text-sm text-white/80 text-center" data-i18n="pricing.professional.period">VNĐ / dự án</p>
+          </div>
+          
+          <ul class="space-y-4 mb-8">
+            <li class="flex items-start gap-3">
+              <i data-lucide="check" class="w-5 h-5 text-white flex-shrink-0 mt-0.5"></i>
+              <span class="text-white/90 text-sm" data-i18n="pricing.professional.feature1">Website 10-20 trang</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <i data-lucide="check" class="w-5 h-5 text-white flex-shrink-0 mt-0.5"></i>
+              <span class="text-white/90 text-sm" data-i18n="pricing.professional.feature2">Thiết kế UI/UX chuyên nghiệp</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <i data-lucide="check" class="w-5 h-5 text-white flex-shrink-0 mt-0.5"></i>
+              <span class="text-white/90 text-sm" data-i18n="pricing.professional.feature3">Tối ưu SEO nâng cao</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <i data-lucide="check" class="w-5 h-5 text-white flex-shrink-0 mt-0.5"></i>
+              <span class="text-white/90 text-sm" data-i18n="pricing.professional.feature4">Tích hợp CMS</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <i data-lucide="check" class="w-5 h-5 text-white flex-shrink-0 mt-0.5"></i>
+              <span class="text-white/90 text-sm" data-i18n="pricing.professional.feature5">Bảo hành 6 tháng</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <i data-lucide="check" class="w-5 h-5 text-white flex-shrink-0 mt-0.5"></i>
+              <span class="text-white/90 text-sm" data-i18n="pricing.professional.feature6">Hỗ trợ 24/7</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <i data-lucide="check" class="w-5 h-5 text-white flex-shrink-0 mt-0.5"></i>
+              <span class="text-white/90 text-sm" data-i18n="pricing.professional.feature7">Training & hướng dẫn</span>
+            </li>
+          </ul>
+          
+          <a href="#contact" class="block w-full bg-white text-cta px-6 py-3 rounded-xl font-semibold text-center hover:bg-white/90 transition-all duration-300 cursor-pointer focus-visible-ring">
+            <span data-i18n="pricing.cta">Chọn gói</span>
+          </a>
+        </div>
+        
+        <!-- Enterprise Plan -->
+        <div class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 relative">
+          <div class="text-center mb-8">
+            <div class="w-16 h-16 bg-accent/10 rounded-xl flex items-center justify-center mx-auto mb-4">
+              <i data-lucide="crown" class="w-8 h-8 text-accent"></i>
+            </div>
+            <h3 class="text-2xl font-bold text-primary mb-2" data-i18n="pricing.enterprise.name">Enterprise</h3>
+            <p class="text-text-muted text-sm" data-i18n="pricing.enterprise.desc">Phù hợp cho doanh nghiệp lớn</p>
+          </div>
+          
+          <div class="mb-8">
+            <div class="flex items-baseline justify-center gap-2 mb-2">
+              <span class="text-4xl font-bold text-primary" data-i18n="pricing.enterprise.price">Liên hệ</span>
+            </div>
+            <p class="text-sm text-text-muted text-center" data-i18n="pricing.enterprise.period">Báo giá tùy chỉnh</p>
+          </div>
+          
+          <ul class="space-y-4 mb-8">
+            <li class="flex items-start gap-3">
+              <i data-lucide="check" class="w-5 h-5 text-success flex-shrink-0 mt-0.5"></i>
+              <span class="text-text-muted text-sm" data-i18n="pricing.enterprise.feature1">Website không giới hạn trang</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <i data-lucide="check" class="w-5 h-5 text-success flex-shrink-0 mt-0.5"></i>
+              <span class="text-text-muted text-sm" data-i18n="pricing.enterprise.feature2">Thiết kế tùy chỉnh cao cấp</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <i data-lucide="check" class="w-5 h-5 text-success flex-shrink-0 mt-0.5"></i>
+              <span class="text-text-muted text-sm" data-i18n="pricing.enterprise.feature3">E-commerce tích hợp</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <i data-lucide="check" class="w-5 h-5 text-success flex-shrink-0 mt-0.5"></i>
+              <span class="text-text-muted text-sm" data-i18n="pricing.enterprise.feature4">API & tích hợp hệ thống</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <i data-lucide="check" class="w-5 h-5 text-success flex-shrink-0 mt-0.5"></i>
+              <span class="text-text-muted text-sm" data-i18n="pricing.enterprise.feature5">Bảo hành 12 tháng</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <i data-lucide="check" class="w-5 h-5 text-success flex-shrink-0 mt-0.5"></i>
+              <span class="text-text-muted text-sm" data-i18n="pricing.enterprise.feature6">Dedicated support team</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <i data-lucide="check" class="w-5 h-5 text-success flex-shrink-0 mt-0.5"></i>
+              <span class="text-text-muted text-sm" data-i18n="pricing.enterprise.feature7">Bảo trì & cập nhật hàng tháng</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <i data-lucide="check" class="w-5 h-5 text-success flex-shrink-0 mt-0.5"></i>
+              <span class="text-text-muted text-sm" data-i18n="pricing.enterprise.feature8">Tư vấn chiến lược digital</span>
+            </li>
+          </ul>
+          
+          <a href="#contact" class="block w-full bg-gradient-to-r from-cta to-accent text-white px-6 py-3 rounded-xl font-semibold text-center hover:shadow-lg hover:shadow-cta/25 transition-all duration-300 cursor-pointer focus-visible-ring">
+            <span data-i18n="pricing.cta">Chọn gói</span>
+          </a>
+        </div>
+      </div>
+      
+      <!-- Note -->
+      <div class="mt-12 text-center">
+        <p class="text-text-muted text-sm" data-i18n="pricing.note">Tất cả gói đều bao gồm hosting miễn phí 1 năm đầu. Giá có thể thay đổi tùy theo yêu cầu cụ thể.</p>
+      </div>
+    </div>
+  </section>
+  
+  <!-- CTA Section -->
+  <section id="contact" class="py-20 px-4 gradient-bg">
+    <div class="max-w-4xl mx-auto text-center">
+      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-6" data-i18n="cta.title">Sẵn sàng bắt đầu dự án?</h2>
+      <p class="text-white/80 text-lg mb-10 max-w-2xl mx-auto" data-i18n="cta.subtitle">Liên hệ ngay để nhận tư vấn miễn phí và báo giá chi tiết cho dự án của bạn.</p>
+      
+      <!-- Contact Form -->
+      <div class="bg-white rounded-3xl p-8 md:p-12 shadow-2xl">
+        <form class="space-y-6" onsubmit="handleSubmit(event)">
+          <div class="grid md:grid-cols-2 gap-6">
+            <div class="text-left">
+              <label for="name" class="block text-sm font-medium text-secondary mb-2" data-i18n="cta.form.name">Họ và tên</label>
+              <input 
+                type="text" 
+                id="name" 
+                name="name"
+                required
+                class="w-full px-4 py-3 border border-surface-dark rounded-xl focus:ring-2 focus:ring-cta focus:border-cta transition-all duration-200 focus-visible-ring"
+                placeholder="Nguyễn Văn A"
+              >
+            </div>
+            <div class="text-left">
+              <label for="email" class="block text-sm font-medium text-secondary mb-2" data-i18n="cta.form.email">Email</label>
+              <input 
+                type="email" 
+                id="email" 
+                name="email"
+                required
+                class="w-full px-4 py-3 border border-surface-dark rounded-xl focus:ring-2 focus:ring-cta focus:border-cta transition-all duration-200 focus-visible-ring"
+                placeholder="email@example.com"
+              >
+            </div>
+          </div>
+          
+          <div class="text-left">
+            <label for="phone" class="block text-sm font-medium text-secondary mb-2" data-i18n="cta.form.phone">Số điện thoại</label>
+            <input 
+              type="tel" 
+              id="phone" 
+              name="phone"
+              class="w-full px-4 py-3 border border-surface-dark rounded-xl focus:ring-2 focus:ring-cta focus:border-cta transition-all duration-200 focus-visible-ring"
+              placeholder="0901 234 567"
+            >
+          </div>
+          
+          <div class="text-left">
+            <label for="service" class="block text-sm font-medium text-secondary mb-2" data-i18n="cta.form.service">Dịch vụ quan tâm</label>
+            <select 
+              id="service" 
+              name="service"
+              class="w-full px-4 py-3 border border-surface-dark rounded-xl focus:ring-2 focus:ring-cta focus:border-cta transition-all duration-200 cursor-pointer focus-visible-ring"
+            >
+              <option value="" data-i18n="cta.form.serviceOptions.select">-- Chọn dịch vụ --</option>
+              <option value="uiux" data-i18n="cta.form.serviceOptions.uiux">Thiết kế UI/UX</option>
+              <option value="webdev" data-i18n="cta.form.serviceOptions.webdev">Phát triển Web</option>
+              <option value="ecommerce" data-i18n="cta.form.serviceOptions.ecommerce">E-commerce</option>
+              <option value="seo" data-i18n="cta.form.serviceOptions.seo">SEO & Marketing</option>
+              <option value="other" data-i18n="cta.form.serviceOptions.other">Khác</option>
+            </select>
+          </div>
+          
+          <div class="text-left">
+            <label for="message" class="block text-sm font-medium text-secondary mb-2" data-i18n="cta.form.message">Mô tả dự án</label>
+            <textarea 
+              id="message" 
+              name="message"
+              rows="4"
+              class="w-full px-4 py-3 border border-surface-dark rounded-xl focus:ring-2 focus:ring-cta focus:border-cta transition-all duration-200 resize-none focus-visible-ring"
+              placeholder="Mô tả ngắn về dự án của bạn..."
+              data-i18n-placeholder="cta.form.messagePlaceholder"
+            ></textarea>
+          </div>
+          
+          <button 
+            type="submit"
+            class="w-full bg-gradient-to-r from-cta to-accent text-white px-8 py-4 rounded-xl font-semibold text-lg hover:shadow-xl hover:shadow-cta/25 transition-all duration-300 cursor-pointer focus-visible-ring flex items-center justify-center gap-2"
+          >
+            <span data-i18n="cta.form.submit">Gửi yêu cầu tư vấn</span>
+            <i data-lucide="send" class="w-5 h-5"></i>
+          </button>
+        </form>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Footer -->
+  <footer class="bg-primary text-white py-16 px-4">
+    <div class="max-w-7xl mx-auto">
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+        <!-- Company Info -->
+        <div class="space-y-4">
+          <div class="flex items-center gap-2">
+            <div class="w-10 h-10 bg-gradient-to-br from-cta to-accent rounded-xl flex items-center justify-center">
+              <span class="text-white font-bold text-lg">EZ</span>
+            </div>
+            <span class="text-xl font-bold">EZpage</span>
+          </div>
+          <p class="text-white/70" data-i18n="footer.description">Công ty phát triển web chuyên nghiệp, mang đến giải pháp số toàn diện cho doanh nghiệp.</p>
+          <div class="flex gap-4">
+            <a href="#" class="w-10 h-10 bg-white/10 hover:bg-cta rounded-lg flex items-center justify-center transition-colors duration-200 cursor-pointer focus-visible-ring" aria-label="Facebook">
+              <i data-lucide="facebook" class="w-5 h-5"></i>
+            </a>
+            <a href="#" class="w-10 h-10 bg-white/10 hover:bg-cta rounded-lg flex items-center justify-center transition-colors duration-200 cursor-pointer focus-visible-ring" aria-label="LinkedIn">
+              <i data-lucide="linkedin" class="w-5 h-5"></i>
+            </a>
+            <a href="#" class="w-10 h-10 bg-white/10 hover:bg-cta rounded-lg flex items-center justify-center transition-colors duration-200 cursor-pointer focus-visible-ring" aria-label="Github">
+              <i data-lucide="github" class="w-5 h-5"></i>
+            </a>
+          </div>
+        </div>
+        
+        <!-- Quick Links -->
+        <div>
+          <h4 class="font-semibold text-lg mb-4" data-i18n="footer.quickLinks">Liên kết nhanh</h4>
+          <ul class="space-y-3">
+            <li><a href="#services" class="text-white/70 hover:text-white transition-colors duration-200 cursor-pointer" data-i18n="footer.links.services">Dịch vụ</a></li>
+            <li><a href="#portfolio" class="text-white/70 hover:text-white transition-colors duration-200 cursor-pointer" data-i18n="footer.links.portfolio">Dự án</a></li>
+            <li><a href="#clients" class="text-white/70 hover:text-white transition-colors duration-200 cursor-pointer" data-i18n="footer.links.clients">Khách hàng</a></li>
+            <li><a href="#contact" class="text-white/70 hover:text-white transition-colors duration-200 cursor-pointer" data-i18n="footer.links.contact">Liên hệ</a></li>
+          </ul>
+        </div>
+        
+        <!-- Services -->
+        <div>
+          <h4 class="font-semibold text-lg mb-4" data-i18n="footer.servicesTitle">Dịch vụ</h4>
+          <ul class="space-y-3">
+            <li><span class="text-white/70" data-i18n="footer.services.uiux">Thiết kế UI/UX</span></li>
+            <li><span class="text-white/70" data-i18n="footer.services.webdev">Phát triển Web</span></li>
+            <li><span class="text-white/70" data-i18n="footer.services.ecommerce">E-commerce</span></li>
+            <li><span class="text-white/70" data-i18n="footer.services.seo">SEO & Marketing</span></li>
+          </ul>
+        </div>
+        
+        <!-- Contact Info -->
+        <div>
+          <h4 class="font-semibold text-lg mb-4" data-i18n="footer.contactTitle">Liên hệ</h4>
+          <ul class="space-y-3">
+            <li class="flex items-center gap-3 text-white/70">
+              <i data-lucide="map-pin" class="w-5 h-5 text-accent"></i>
+              <span data-i18n="footer.contact.address">123 Nguyễn Huệ, Q.1, TP.HCM</span>
+            </li>
+            <li class="flex items-center gap-3 text-white/70">
+              <i data-lucide="phone" class="w-5 h-5 text-accent"></i>
+              <span>+84 901 234 567</span>
+            </li>
+            <li class="flex items-center gap-3 text-white/70">
+              <i data-lucide="mail" class="w-5 h-5 text-accent"></i>
+              <span>contact@ezpage.vn</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+        <p class="text-white/50 text-sm" data-i18n="footer.copyright">© 2026 EZpage. Tất cả quyền được bảo lưu.</p>
+        <div class="flex gap-6 text-sm">
+          <a href="privacy-policy.html" class="text-white/50 hover:text-white transition-colors duration-200 cursor-pointer" data-i18n="footer.privacy">Chính sách bảo mật</a>
+          <a href="terms-of-service.html" class="text-white/50 hover:text-white transition-colors duration-200 cursor-pointer" data-i18n="footer.terms">Điều khoản sử dụng</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+  
+  <!-- JavaScript -->
+  <script>
+    // Initialize Lucide icons
+    lucide.createIcons();
+    
+    // Language translations
+    const translations = {
+      vi: {
+        // Navigation
+        'nav.services': 'Dịch vụ',
+        'nav.portfolio': 'Dự án',
+        'nav.pricing': 'Bảng giá',
+        'nav.clients': 'Khách hàng',
+        'nav.contact': 'Liên hệ',
+        'nav.cta': 'Bắt đầu',
+        
+        // Hero
+        'hero.badge': 'Đang mở đơn dự án mới',
+        'hero.title1': 'Biến ý tưởng thành',
+        'hero.title2': 'Website xuất sắc',
+        'hero.description': 'EZpage chuyên thiết kế và phát triển website chuyên nghiệp, tối ưu UX/UI, giúp doanh nghiệp bạn tỏa sáng trên không gian số.',
+        'hero.cta1': 'Nhận tư vấn miễn phí',
+        'hero.cta2': 'Xem dự án',
+        'hero.stat1': 'Dự án hoàn thành',
+        'hero.stat2': 'Khách hàng tin tưởng',
+        'hero.stat3': 'Năm kinh nghiệm',
+        'hero.scroll': 'Khám phá thêm',
+        'hero.float1.label': 'Tốc độ tải',
+        'hero.float2.label': 'Người dùng',
+        
+        // Services
+        'services.badge': 'Dịch vụ của chúng tôi',
+        'services.title': 'Giải pháp Web toàn diện',
+        'services.subtitle': 'Từ ý tưởng đến sản phẩm hoàn chỉnh, chúng tôi đồng hành cùng bạn trong mọi giai đoạn',
+        'services.item1.title': 'Thiết kế UI/UX',
+        'services.item1.desc': 'Thiết kế giao diện người dùng đẹp mắt, trực quan và tối ưu trải nghiệm.',
+        'services.item2.title': 'Phát triển Web',
+        'services.item2.desc': 'Xây dựng website hiện đại với công nghệ tiên tiến, bảo mật cao.',
+        'services.item3.title': 'E-commerce',
+        'services.item3.desc': 'Giải pháp thương mại điện tử tích hợp thanh toán, quản lý kho hàng.',
+        'services.item4.title': 'Responsive Design',
+        'services.item4.desc': 'Tối ưu hiển thị trên mọi thiết bị từ điện thoại đến máy tính.',
+        'services.item5.title': 'SEO & Marketing',
+        'services.item5.desc': 'Tối ưu website cho công cụ tìm kiếm, tăng visibility online.',
+        'services.item6.title': 'Hỗ trợ & Bảo trì',
+        'services.item6.desc': 'Đội ngũ hỗ trợ 24/7, bảo trì và cập nhật website thường xuyên.',
+        
+        // Portfolio
+        'portfolio.badge': 'Dự án nổi bật',
+        'portfolio.title': 'Sản phẩm đã phát triển',
+        'portfolio.subtitle': 'Khám phá những dự án chúng tôi đã thực hiện cho khách hàng',
+        'portfolio.viewProject': 'Xem dự án',
+        'portfolio.item1.title': 'Analytics Dashboard',
+        'portfolio.item1.desc': 'Bảng điều khiển phân tích dữ liệu thời gian thực cho doanh nghiệp SaaS.',
+        'portfolio.item2.title': 'Educational Platform',
+        'portfolio.item2.desc': 'Nền tảng học trực tuyến với hệ thống quản lý khóa học đa dạng.',
+        'portfolio.item3.title': 'Pet Grooming',
+        'portfolio.item3.desc': 'Website dịch vụ chăm sóc thú cưng với hệ thống đặt lịch online.',
+        'portfolio.item4.title': 'AI Chatbot Platform',
+        'portfolio.item4.desc': 'Nền tảng chatbot AI thông minh với khả năng tùy biến cao.',
+        'portfolio.item5.title': 'Luxury E-commerce',
+        'portfolio.item5.desc': 'Cửa hàng trực tuyến cao cấp với trải nghiệm mua sắm sang trọng.',
+        'portfolio.item6.title': 'Fintech Crypto',
+        'portfolio.item6.desc': 'Nền tảng giao dịch tiền điện tử với dashboard realtime.',
+        
+        // Clients
+        'clients.badge': 'Khách hàng tiềm năng',
+        'clients.title': 'Được tin tưởng bởi',
+        'clients.subtitle': 'Những doanh nghiệp hàng đầu đã đặt niềm tin vào EZpage',
+        'clients.testimonial1.text': '"EZpage đã giúp chúng tôi xây dựng website bán hàng chuyên nghiệp, doanh số tăng 150% sau 3 tháng triển khai."',
+        'clients.testimonial1.name': 'Nguyễn Thành',
+        'clients.testimonial1.role': 'CEO, TechCorp',
+        'clients.testimonial2.text': '"Đội ngũ EZpage rất chuyên nghiệp, tận tâm. Họ không chỉ làm đúng yêu cầu mà còn tư vấn thêm nhiều giải pháp hay."',
+        'clients.testimonial2.name': 'Lê Hương',
+        'clients.testimonial2.role': 'Marketing Director, StartupVN',
+        'clients.testimonial3.text': '"Website tải nhanh, thiết kế đẹp, khách hàng của tôi rất hài lòng. Tôi sẽ tiếp tục hợp tác lâu dài."',
+        'clients.testimonial3.name': 'Trần Minh',
+        'clients.testimonial3.role': 'Founder, ShopPro',
+        
+        // Pricing
+        'pricing.badge': 'Bảng giá',
+        'pricing.title': 'Gói dịch vụ phù hợp',
+        'pricing.subtitle': 'Chọn gói dịch vụ phù hợp với nhu cầu và ngân sách của bạn',
+        'pricing.cta': 'Chọn gói',
+        'pricing.note': 'Tất cả gói đều bao gồm hosting miễn phí 1 năm đầu. Giá có thể thay đổi tùy theo yêu cầu cụ thể.',
+        'pricing.starter.name': 'Starter',
+        'pricing.starter.desc': 'Phù hợp cho cá nhân & startup',
+        'pricing.starter.price': '15',
+        'pricing.starter.period': 'VNĐ / dự án',
+        'pricing.starter.feature1': 'Website 5-10 trang',
+        'pricing.starter.feature2': 'Thiết kế responsive',
+        'pricing.starter.feature3': 'Tối ưu SEO cơ bản',
+        'pricing.starter.feature4': 'Bảo hành 3 tháng',
+        'pricing.starter.feature5': 'Hỗ trợ email',
+        'pricing.professional.badge': 'Phổ biến nhất',
+        'pricing.professional.name': 'Professional',
+        'pricing.professional.desc': 'Phù hợp cho doanh nghiệp vừa',
+        'pricing.professional.price': '35',
+        'pricing.professional.period': 'VNĐ / dự án',
+        'pricing.professional.feature1': 'Website 10-20 trang',
+        'pricing.professional.feature2': 'Thiết kế UI/UX chuyên nghiệp',
+        'pricing.professional.feature3': 'Tối ưu SEO nâng cao',
+        'pricing.professional.feature4': 'Tích hợp CMS',
+        'pricing.professional.feature5': 'Bảo hành 6 tháng',
+        'pricing.professional.feature6': 'Hỗ trợ 24/7',
+        'pricing.professional.feature7': 'Training & hướng dẫn',
+        'pricing.enterprise.name': 'Enterprise',
+        'pricing.enterprise.desc': 'Phù hợp cho doanh nghiệp lớn',
+        'pricing.enterprise.price': 'Liên hệ',
+        'pricing.enterprise.period': 'Báo giá tùy chỉnh',
+        'pricing.enterprise.feature1': 'Website không giới hạn trang',
+        'pricing.enterprise.feature2': 'Thiết kế tùy chỉnh cao cấp',
+        'pricing.enterprise.feature3': 'E-commerce tích hợp',
+        'pricing.enterprise.feature4': 'API & tích hợp hệ thống',
+        'pricing.enterprise.feature5': 'Bảo hành 12 tháng',
+        'pricing.enterprise.feature6': 'Dedicated support team',
+        'pricing.enterprise.feature7': 'Bảo trì & cập nhật hàng tháng',
+        'pricing.enterprise.feature8': 'Tư vấn chiến lược digital',
+        
+        // CTA
+        'cta.title': 'Sẵn sàng bắt đầu dự án?',
+        'cta.subtitle': 'Liên hệ ngay để nhận tư vấn miễn phí và báo giá chi tiết cho dự án của bạn.',
+        'cta.form.name': 'Họ và tên',
+        'cta.form.email': 'Email',
+        'cta.form.phone': 'Số điện thoại',
+        'cta.form.service': 'Dịch vụ quan tâm',
+        'cta.form.serviceOptions.select': '-- Chọn dịch vụ --',
+        'cta.form.serviceOptions.uiux': 'Thiết kế UI/UX',
+        'cta.form.serviceOptions.webdev': 'Phát triển Web',
+        'cta.form.serviceOptions.ecommerce': 'E-commerce',
+        'cta.form.serviceOptions.seo': 'SEO & Marketing',
+        'cta.form.serviceOptions.other': 'Khác',
+        'cta.form.message': 'Mô tả dự án',
+        'cta.form.messagePlaceholder': 'Mô tả ngắn về dự án của bạn...',
+        'cta.form.submit': 'Gửi yêu cầu tư vấn',
+        
+        // Footer
+        'footer.description': 'Công ty phát triển web chuyên nghiệp, mang đến giải pháp số toàn diện cho doanh nghiệp.',
+        'footer.quickLinks': 'Liên kết nhanh',
+        'footer.links.services': 'Dịch vụ',
+        'footer.links.portfolio': 'Dự án',
+        'footer.links.clients': 'Khách hàng',
+        'footer.links.contact': 'Liên hệ',
+        'footer.servicesTitle': 'Dịch vụ',
+        'footer.services.uiux': 'Thiết kế UI/UX',
+        'footer.services.webdev': 'Phát triển Web',
+        'footer.services.ecommerce': 'E-commerce',
+        'footer.services.seo': 'SEO & Marketing',
+        'footer.contactTitle': 'Liên hệ',
+        'footer.contact.address': '123 Nguyễn Huệ, Q.1, TP.HCM',
+        'footer.copyright': '© 2026 EZpage. Tất cả quyền được bảo lưu.',
+        'footer.privacy': 'Chính sách bảo mật',
+        'footer.terms': 'Điều khoản sử dụng',
+      },
+      en: {
+        // Navigation
+        'nav.services': 'Services',
+        'nav.portfolio': 'Portfolio',
+        'nav.pricing': 'Pricing',
+        'nav.clients': 'Clients',
+        'nav.contact': 'Contact',
+        'nav.cta': 'Get Started',
+        
+        // Hero
+        'hero.badge': 'Now accepting new projects',
+        'hero.title1': 'Transform ideas into',
+        'hero.title2': 'Outstanding Websites',
+        'hero.description': 'EZpage specializes in professional website design and development, optimizing UX/UI to help your business shine in the digital space.',
+        'hero.cta1': 'Get Free Consultation',
+        'hero.cta2': 'View Projects',
+        'hero.stat1': 'Projects Completed',
+        'hero.stat2': 'Trusted Clients',
+        'hero.stat3': 'Years Experience',
+        'hero.scroll': 'Explore More',
+        'hero.float1.label': 'Load Speed',
+        'hero.float2.label': 'Users',
+        
+        // Services
+        'services.badge': 'Our Services',
+        'services.title': 'Comprehensive Web Solutions',
+        'services.subtitle': 'From concept to finished product, we accompany you at every stage',
+        'services.item1.title': 'UI/UX Design',
+        'services.item1.desc': 'Beautiful, intuitive user interface design optimized for best experience.',
+        'services.item2.title': 'Web Development',
+        'services.item2.desc': 'Building modern websites with cutting-edge technology and high security.',
+        'services.item3.title': 'E-commerce',
+        'services.item3.desc': 'E-commerce solutions with integrated payments and inventory management.',
+        'services.item4.title': 'Responsive Design',
+        'services.item4.desc': 'Optimized display across all devices from mobile phones to desktops.',
+        'services.item5.title': 'SEO & Marketing',
+        'services.item5.desc': 'Website optimization for search engines, increasing online visibility.',
+        'services.item6.title': 'Support & Maintenance',
+        'services.item6.desc': '24/7 support team, regular website maintenance and updates.',
+        
+        // Portfolio
+        'portfolio.badge': 'Featured Projects',
+        'portfolio.title': 'Our Portfolio',
+        'portfolio.subtitle': 'Explore the projects we have completed for our clients',
+        'portfolio.viewProject': 'View Project',
+        'portfolio.item1.title': 'Analytics Dashboard',
+        'portfolio.item1.desc': 'Real-time data analytics dashboard for SaaS businesses.',
+        'portfolio.item2.title': 'Educational Platform',
+        'portfolio.item2.desc': 'Online learning platform with comprehensive course management system.',
+        'portfolio.item3.title': 'Pet Grooming',
+        'portfolio.item3.desc': 'Pet care service website with online booking system.',
+        'portfolio.item4.title': 'AI Chatbot Platform',
+        'portfolio.item4.desc': 'Intelligent AI chatbot platform with high customization capabilities.',
+        'portfolio.item5.title': 'Luxury E-commerce',
+        'portfolio.item5.desc': 'Premium online store with luxurious shopping experience.',
+        'portfolio.item6.title': 'Fintech Crypto',
+        'portfolio.item6.desc': 'Cryptocurrency trading platform with real-time dashboard.',
+        
+        // Clients
+        'clients.badge': 'Potential Clients',
+        'clients.title': 'Trusted By',
+        'clients.subtitle': 'Leading businesses have placed their trust in EZpage',
+        'clients.testimonial1.text': '"EZpage helped us build a professional e-commerce website, sales increased by 150% after 3 months of deployment."',
+        'clients.testimonial1.name': 'Nguyen Thanh',
+        'clients.testimonial1.role': 'CEO, TechCorp',
+        'clients.testimonial2.text': '"The EZpage team is very professional and dedicated. They not only met requirements but also suggested many great solutions."',
+        'clients.testimonial2.name': 'Le Huong',
+        'clients.testimonial2.role': 'Marketing Director, StartupVN',
+        'clients.testimonial3.text': '"Fast loading website, beautiful design, my customers are very satisfied. I will continue long-term cooperation."',
+        'clients.testimonial3.name': 'Tran Minh',
+        'clients.testimonial3.role': 'Founder, ShopPro',
+        
+        // Pricing
+        'pricing.badge': 'Pricing',
+        'pricing.title': 'Choose Your Plan',
+        'pricing.subtitle': 'Select the service package that fits your needs and budget',
+        'pricing.cta': 'Choose Plan',
+        'pricing.note': 'All plans include free hosting for the first year. Prices may vary based on specific requirements.',
+        'pricing.starter.name': 'Starter',
+        'pricing.starter.desc': 'Perfect for individuals & startups',
+        'pricing.starter.price': '15',
+        'pricing.starter.period': 'Million VND / project',
+        'pricing.starter.feature1': '5-10 page website',
+        'pricing.starter.feature2': 'Responsive design',
+        'pricing.starter.feature3': 'Basic SEO optimization',
+        'pricing.starter.feature4': '3 months warranty',
+        'pricing.starter.feature5': 'Email support',
+        'pricing.professional.badge': 'Most Popular',
+        'pricing.professional.name': 'Professional',
+        'pricing.professional.desc': 'Perfect for medium businesses',
+        'pricing.professional.price': '35',
+        'pricing.professional.period': 'Million VND / project',
+        'pricing.professional.feature1': '10-20 page website',
+        'pricing.professional.feature2': 'Professional UI/UX design',
+        'pricing.professional.feature3': 'Advanced SEO optimization',
+        'pricing.professional.feature4': 'CMS integration',
+        'pricing.professional.feature5': '6 months warranty',
+        'pricing.professional.feature6': '24/7 support',
+        'pricing.professional.feature7': 'Training & guidance',
+        'pricing.enterprise.name': 'Enterprise',
+        'pricing.enterprise.desc': 'Perfect for large enterprises',
+        'pricing.enterprise.price': 'Contact',
+        'pricing.enterprise.period': 'Custom quote',
+        'pricing.enterprise.feature1': 'Unlimited pages website',
+        'pricing.enterprise.feature2': 'Premium custom design',
+        'pricing.enterprise.feature3': 'E-commerce integration',
+        'pricing.enterprise.feature4': 'API & system integration',
+        'pricing.enterprise.feature5': '12 months warranty',
+        'pricing.enterprise.feature6': 'Dedicated support team',
+        'pricing.enterprise.feature7': 'Monthly maintenance & updates',
+        'pricing.enterprise.feature8': 'Digital strategy consulting',
+        
+        // CTA
+        'cta.title': 'Ready to start your project?',
+        'cta.subtitle': 'Contact us now for free consultation and detailed quote for your project.',
+        'cta.form.name': 'Full Name',
+        'cta.form.email': 'Email',
+        'cta.form.phone': 'Phone Number',
+        'cta.form.service': 'Service of Interest',
+        'cta.form.serviceOptions.select': '-- Select a service --',
+        'cta.form.serviceOptions.uiux': 'UI/UX Design',
+        'cta.form.serviceOptions.webdev': 'Web Development',
+        'cta.form.serviceOptions.ecommerce': 'E-commerce',
+        'cta.form.serviceOptions.seo': 'SEO & Marketing',
+        'cta.form.serviceOptions.other': 'Other',
+        'cta.form.message': 'Project Description',
+        'cta.form.messagePlaceholder': 'Brief description of your project...',
+        'cta.form.submit': 'Send Consultation Request',
+        
+        // Footer
+        'footer.description': 'Professional web development company, providing comprehensive digital solutions for businesses.',
+        'footer.quickLinks': 'Quick Links',
+        'footer.links.services': 'Services',
+        'footer.links.portfolio': 'Portfolio',
+        'footer.links.clients': 'Clients',
+        'footer.links.contact': 'Contact',
+        'footer.servicesTitle': 'Services',
+        'footer.services.uiux': 'UI/UX Design',
+        'footer.services.webdev': 'Web Development',
+        'footer.services.ecommerce': 'E-commerce',
+        'footer.services.seo': 'SEO & Marketing',
+        'footer.contactTitle': 'Contact',
+        'footer.contact.address': '123 Nguyen Hue, D.1, HCMC',
+        'footer.copyright': '© 2026 EZpage. All rights reserved.',
+        'footer.privacy': 'Privacy Policy',
+        'footer.terms': 'Terms of Service',
+      }
+    };
+    
+    // Current language
+    let currentLang = 'vi';
+    
+    // Switch language function
+    function switchLanguage(lang) {
+      currentLang = lang;
+      document.documentElement.setAttribute('data-lang', lang);
+      document.documentElement.setAttribute('lang', lang);
+      
+      // Update button styles
+      const viBtn = document.getElementById('lang-vi');
+      const enBtn = document.getElementById('lang-en');
+      
+      if (lang === 'vi') {
+        viBtn.classList.add('bg-white', 'text-primary', 'shadow-sm');
+        viBtn.classList.remove('text-text-muted', 'hover:text-primary');
+        enBtn.classList.remove('bg-white', 'text-primary', 'shadow-sm');
+        enBtn.classList.add('text-text-muted', 'hover:text-primary');
+      } else {
+        enBtn.classList.add('bg-white', 'text-primary', 'shadow-sm');
+        enBtn.classList.remove('text-text-muted', 'hover:text-primary');
+        viBtn.classList.remove('bg-white', 'text-primary', 'shadow-sm');
+        viBtn.classList.add('text-text-muted', 'hover:text-primary');
+      }
+      
+      // Update all translatable elements
+      document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        if (translations[lang][key]) {
+          el.textContent = translations[lang][key];
+        }
+      });
+      
+      // Update placeholders
+      document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
+        const key = el.getAttribute('data-i18n-placeholder');
+        if (translations[lang][key]) {
+          el.placeholder = translations[lang][key];
+        }
+      });
+      
+      // Update page title
+      document.title = lang === 'vi' 
+        ? 'EZpage - Giải pháp Web Chuyên nghiệp'
+        : 'EZpage - Professional Web Solutions';
+    }
+    
+    // Mobile menu toggle
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    
+    mobileMenuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+    
+    // Close mobile menu when clicking a link
+    mobileMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.add('hidden');
+      });
+    });
+    
+    // Form submission handler
+    function handleSubmit(e) {
+      e.preventDefault();
+      
+      const formData = new FormData(e.target);
+      const data = Object.fromEntries(formData);
+      
+      // Show success message (in production, this would send to a server)
+      const message = currentLang === 'vi' 
+        ? 'Cảm ơn bạn! Chúng tôi sẽ liên hệ trong thời gian sớm nhất.'
+        : 'Thank you! We will contact you as soon as possible.';
+      
+      alert(message);
+      e.target.reset();
+    }
+    
+    // Intersection Observer for animations
+    const observerOptions = {
+      root: null,
+      rootMargin: '0px',
+      threshold: 0.1
+    };
+    
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('animate-slide-up');
+          entry.target.style.opacity = '1';
+        }
+      });
+    }, observerOptions);
+    
+    // Observe elements for scroll animations
+    document.querySelectorAll('.portfolio-card, .bg-surface.rounded-2xl').forEach(el => {
+      el.style.opacity = '0';
+      observer.observe(el);
+    });
+    
+    // Smooth scroll for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
+      });
+    });
+  </script>
 </body>
 </html>

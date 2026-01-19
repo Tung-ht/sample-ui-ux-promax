@@ -1,245 +1,169 @@
-# EZpage - Professional Web Development Company Website
+# EZpage - Web Development Company Website
 
-A modern, responsive, and bilingual (Vietnamese/English) website for EZpage, a professional web development company.
+![EZpage](https://img.shields.io/badge/EZpage-Web%20Development-0369A1?style=for-the-badge)
+![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)
+![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
 
-## 🌟 Features
+## 📖 Introduction
 
-### Core Features
-- **Fixed Navigation Bar** - Sticky header with smooth scrolling to sections (Services, Pricing, Contact)
-- **Hero Section** - Eye-catching hero with gradient text, floating cards animation, and call-to-action buttons
-- **Services Section** - 6 service cards showcasing web design, development, mobile responsive, e-commerce, SEO, and support services
-- **Portfolio Section** - Showcase of 6 demo projects with iframe previews:
-  - SaaS Analytics Dashboard
-  - Educational Platform
-  - Pet Grooming Service
-  - AI Chatbot Platform
-  - Luxury E-Commerce
-  - Fintech & Crypto Trading
-- **Pricing Section** - 3 pricing tiers (Starter, Professional, Enterprise) with feature comparison
-- **Testimonials Section** - Client feedback with 5-star ratings
-- **Contact Form** - Interactive quote request form with validation
-- **Footer** - Quick links, services list, newsletter signup, and social media links
+Landing page website for **EZpage** - A professional web development company. Designed with modern style, mobile-first approach, and multilingual support (Vietnamese/English).
 
-### Design Features
-- **Modern Dark Theme** - Professional dark color scheme with gradient accents
-- **Mobile-First Responsive Design** - Optimized for all devices (mobile, tablet, desktop)
-- **Eye-Catching Colors** - Purple (#6366f1) and pink (#ec4899) gradient accents
-- **Modern Typography** - Inter and Poppins fonts with Vietnamese support
-- **Smooth Animations** - Floating cards, fade-in effects, hover transitions
-- **Icons & Illustrations** - Font Awesome icons throughout the design
+## ✨ Features
 
-### Technical Features
-- **Bilingual Support** - Seamless language switching between Vietnamese and English
-- **Form Validation** - Client-side validation for contact form
-- **Smooth Scrolling** - Anchor links with smooth scroll behavior
-- **Performance Optimized** - Lazy loading for iframes, efficient CSS, minimal JavaScript
-- **SEO Ready** - Semantic HTML, proper meta tags, accessible markup
-- **Cross-browser Compatible** - Works on all modern browsers
+### Main Page (`index.html`)
+- 🎨 Modern design with glassmorphism navigation
+- 📱 Fully responsive across all devices (375px → 1440px)
+- 🌐 Bilingual support: Vietnamese & English
+- 🖼️ Portfolio showcase with live iframe previews
+- 💬 Testimonials/Potential clients section
+- 📝 Contact form
+- ⚡ Smooth animations with prefers-reduced-motion support
+
+### Additional Pages
+- 📜 `privacy-policy.html` - Privacy Policy
+- 📋 `terms-of-service.html` - Terms of Service
+
+## 🛠️ Technologies Used
+
+| Technology | Purpose |
+|------------|---------|
+| HTML5 | Semantic structure |
+| Tailwind CSS (CDN) | Styling & responsive design |
+| JavaScript (Vanilla) | Interactions & multilingual |
+| Lucide Icons | SVG icons |
+| Plus Jakarta Sans | Typography (Vietnamese-friendly) |
 
 ## 📁 Project Structure
 
 ```
 sample-ui-ux-promax/
-├── index.html          # Main HTML structure
-├── styles.css          # All styles (mobile-first, responsive)
-├── script.js           # JavaScript functionality (language switch, form validation)
-└── README.md           # Project documentation
+├── index.html              # Homepage
+├── privacy-policy.html     # Privacy Policy
+├── terms-of-service.html   # Terms of Service
+├── README.md               # Documentation (this file)
+├── prompt.txt              # Initial requirements
+└── design-system/          # Generated design system
+    └── ezpage/
+        ├── MASTER.md       # Design tokens & guidelines
+        └── pages/          # Page-specific overrides
 ```
 
-## 🚀 Getting Started
+## 🚀 How to Run Demo
 
 ### Prerequisites
-- A modern web browser (Chrome, Firefox, Safari, Edge)
-- A local web server (optional, but recommended for testing)
+- Python 3.x installed
 
-### Installation & Running
+### Method 1: Using Python HTTP Server (Recommended)
 
-1. **Clone or download this repository**
+**Windows (PowerShell/CMD):**
+```powershell
+# Navigate to project directory
+cd C:\Users\admin\Desktop\sample-ui-ux-promax
 
-2. **Option 1: Open directly in browser**
-   ```bash
-   # Simply open index.html in your browser
-   # Double-click index.html file
-   ```
-
-3. **Option 2: Run with Python HTTP server (recommended)**
-   ```bash
-   # Navigate to project directory
-   cd sample-ui-ux-promax
-   
-   # Start server (Python 3)
-   python -m http.server 8000
-   
-   # Open in browser
-   # Navigate to http://localhost:8000
-   ```
-
-4. **Option 3: Run with Node.js HTTP server**
-   ```bash
-   # Install http-server globally (first time only)
-   npm install -g http-server
-   
-   # Navigate to project directory and run
-   cd sample-ui-ux-promax
-   http-server -p 8000
-   
-   # Open in browser
-   # Navigate to http://localhost:8000
-   ```
-
-## 🎨 Design Patterns & Best Practices
-
-### CSS Architecture
-- **CSS Variables** - Centralized color scheme, spacing, and sizing
-- **Mobile-First Approach** - Base styles for mobile, progressive enhancement for larger screens
-- **BEM-like Naming** - Clear, descriptive class names
-- **Flexbox & Grid** - Modern layout techniques for responsive design
-- **Smooth Transitions** - CSS transitions for better UX
-
-### JavaScript Patterns
-- **Module Pattern** - Organized code with clear separation of concerns
-- **Event Delegation** - Efficient event handling
-- **Progressive Enhancement** - Core functionality works without JavaScript
-- **Intersection Observer** - Performance-optimized scroll animations
-- **Form Validation** - Client-side validation with user-friendly messages
-
-### Responsive Design
-- **Breakpoints:**
-  - Mobile: < 768px
-  - Tablet: 768px - 1024px
-  - Desktop: > 1024px
-- **Flexible Grids** - Auto-fit and auto-fill grid layouts
-- **Fluid Typography** - clamp() function for responsive text sizing
-- **Mobile Menu** - Hamburger menu with smooth slide-in animation
-
-### Accessibility
-- **Semantic HTML** - Proper use of HTML5 semantic elements
-- **ARIA Labels** - Descriptive labels for screen readers
-- **Keyboard Navigation** - Full keyboard accessibility
-- **Focus Management** - Visible focus states and proper tab order
-- **Color Contrast** - WCAG AA compliant color contrast ratios
-
-## 🌐 Language Support
-
-The website supports two languages:
-- **Vietnamese (VI)** - Default language
-- **English (EN)** - Switch via language toggle button in navigation
-
-Language switching is instant and affects all text content including:
-- Navigation menu
-- Hero section
-- Service descriptions
-- Portfolio items
-- Pricing cards
-- Testimonials
-- Contact form
-- Footer content
-
-## 📝 Form Features
-
-The contact form includes:
-- **Name field** - Required text input
-- **Email field** - Required with email validation
-- **Website Type dropdown** - 6 options:
-  - Corporate Website
-  - E-Commerce Store
-  - Portfolio/Personal
-  - Blog/News
-  - Landing Page
-  - Custom Solution
-- **Project Details** - Required textarea for detailed requirements
-- **Form Validation** - Real-time validation with error messages
-- **Success Message** - Confirmation after successful submission
-- **Loading State** - Visual feedback during submission
-
-## 🎯 Target Sections
-
-### Navigation Links
-- `#home` - Hero section
-- `#services` - Services showcase
-- `#portfolio` - Project portfolio
-- `#pricing` - Pricing plans
-- `#contact` - Contact form
-
-## 🔧 Customization
-
-### Colors
-Edit CSS variables in `styles.css`:
-```css
-:root {
-    --primary-color: #6366f1;
-    --secondary-color: #ec4899;
-    --accent-color: #f59e0b;
-    /* ... more colors */
-}
+# Run server (Python 3)
+python -m http.server 8000
 ```
 
-### Content
-- Edit text in `index.html` (update both `data-en` and `data-vi` attributes)
-- Update portfolio links in iframe `src` attributes
-- Modify pricing tiers and features
+**macOS/Linux:**
+```bash
+# Navigate to project directory
+cd ~/Desktop/sample-ui-ux-promax
 
-### Translations
-Add or modify translations in `script.js`:
-```javascript
-const translations = {
-    en: {
-        'Vietnamese Text': 'English Text',
-        // ... more translations
-    }
-};
+# Run server (Python 3)
+python3 -m http.server 8000
 ```
 
-## 📱 Browser Support
+**Then open your browser and visit:**
+```
+http://localhost:8000
+```
 
-- Chrome (latest)
-- Firefox (latest)
-- Safari (latest)
-- Edge (latest)
-- Mobile browsers (iOS Safari, Chrome Mobile)
+### Method 2: Using a Different Port
 
-## 📄 Technologies Used
+```powershell
+# Use port 3000
+python -m http.server 3000
 
-- **HTML5** - Semantic markup
-- **CSS3** - Modern styling with flexbox, grid, animations
-- **Vanilla JavaScript** - No frameworks, pure JS for optimal performance
-- **Font Awesome 6.4.0** - Icon library
-- **Google Fonts** - Inter & Poppins fonts
+# Or port 5500
+python -m http.server 5500
+```
 
-## 🎉 Key Highlights
+### Method 3: Open HTML File Directly
 
-1. ✅ **Modern & Professional Design** - Dark theme with vibrant gradients
-2. ✅ **Fully Responsive** - Perfect on all devices
-3. ✅ **Bilingual** - Vietnamese & English support
-4. ✅ **Interactive Portfolio** - Live demo previews with iframes
-5. ✅ **Form Validation** - User-friendly contact form
-6. ✅ **Smooth Animations** - Floating cards, fade-in effects
-7. ✅ **SEO Optimized** - Semantic HTML and meta tags
-8. ✅ **Fast Performance** - Optimized assets and lazy loading
-9. ✅ **Accessible** - WCAG compliant
-10. ✅ **Easy to Customize** - Well-organized, commented code
+You can also open the `index.html` file directly in your browser, however some features (like iframe previews) may not work fully due to CORS policy.
 
-## 📞 Demo Links
+### Method 4: Using VS Code Live Server
 
-The portfolio section showcases these demo projects:
-1. https://ui-ux-pro-max-skill.nextlevelbuilder.io/demo/saas-analytics-dashboard
-2. https://ui-ux-pro-max-skill.nextlevelbuilder.io/demo/educational-platform
-3. https://ui-ux-pro-max-skill.nextlevelbuilder.io/demo/pet-grooming
-4. https://ui-ux-pro-max-skill.nextlevelbuilder.io/demo/ai-chatbot-platform
-5. https://ui-ux-pro-max-skill.nextlevelbuilder.io/demo/luxury-ecommerce
-6. https://ui-ux-pro-max-skill.nextlevelbuilder.io/demo/fintech-crypto
+If you're using VS Code, install the **Live Server** extension and right-click on `index.html` → "Open with Live Server".
 
-## 👨‍💻 Development Notes
+## 🎯 Demo Pages
 
-- No build process required - pure HTML, CSS, and JavaScript
-- No dependencies or node_modules
-- Can be deployed to any static hosting service
-- Works offline after initial load
+| Page | URL | Description |
+|------|-----|-------------|
+| Homepage | `http://localhost:8000/` | Main landing page |
+| Privacy Policy | `http://localhost:8000/privacy-policy.html` | Privacy Policy |
+| Terms of Service | `http://localhost:8000/terms-of-service.html` | Terms of Service |
+
+## 🎨 Design System
+
+The project uses a design system generated from **UI Pro Max**:
+
+### Color Palette
+| Role | Hex | CSS Variable |
+|------|-----|--------------|
+| Primary | `#0F172A` | `--color-primary` |
+| Secondary | `#334155` | `--color-secondary` |
+| CTA/Accent | `#0369A1` | `--color-cta` |
+| Accent 2 | `#06B6D4` | `--color-accent` |
+| Background | `#F8FAFC` | `--color-background` |
+| Text | `#020617` | `--color-text` |
+
+### Typography
+- **Font Family:** Plus Jakarta Sans
+- **Weights:** 300, 400, 500, 600, 700, 800
+
+## 🌐 Language Switching
+
+The website supports 2 languages:
+- 🇻🇳 **Vietnamese** (default)
+- 🇬🇧 **English**
+
+Click the **VI** or **EN** button on the navigation to switch languages.
+
+## 📱 Responsive Breakpoints
+
+| Breakpoint | Width | Target |
+|------------|-------|--------|
+| Mobile | 375px | iPhone SE, small phones |
+| Tablet | 768px | iPad, tablets |
+| Desktop | 1024px | Laptops |
+| Large | 1440px | Desktop monitors |
+
+## 🔗 Portfolio Projects Preview
+
+The website displays 6 sample projects with live previews:
+
+1. **SaaS Analytics Dashboard** - Real-time analytics dashboard
+2. **Educational Platform** - Online learning platform
+3. **Pet Grooming** - Pet care service
+4. **AI Chatbot Platform** - AI chatbot platform
+5. **Luxury E-commerce** - Premium online store
+6. **Fintech Crypto** - Cryptocurrency trading platform
+
+## ✅ Pre-Deployment Checklist
+
+- [ ] Test all links are working
+- [ ] Test responsive on mobile/tablet
+- [ ] Check form submission
+- [ ] Verify VI/EN language switching
+- [ ] Optimize images (if any)
+- [ ] Minify CSS/JS (production)
 
 ## 📄 License
 
-This project is developed for EZpage web development company.
+© 2026 EZpage. All rights reserved.
 
 ---
 
-**Developed with ❤️ for EZpage**
+**Developed with ❤️ using UI Pro Max Design System**

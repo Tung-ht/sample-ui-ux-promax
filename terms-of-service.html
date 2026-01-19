@@ -1,0 +1,714 @@
+<!DOCTYPE html>
+<html lang="vi" data-lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Điều khoản sử dụng - EZpage</title>
+  <meta name="description" content="Điều khoản sử dụng dịch vụ của EZpage - Các quy định khi sử dụng dịch vụ thiết kế và phát triển web">
+  
+  <!-- Google Fonts - Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+  
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            'jakarta': ['"Plus Jakarta Sans"', 'sans-serif'],
+          },
+          colors: {
+            primary: '#0F172A',
+            secondary: '#334155',
+            cta: '#0369A1',
+            accent: '#06B6D4',
+            surface: '#F8FAFC',
+            'surface-dark': '#E2E8F0',
+            text: '#020617',
+            'text-muted': '#64748B',
+            success: '#10B981',
+            warning: '#F59E0B',
+          },
+        },
+      },
+    }
+  </script>
+  
+  <style>
+    * {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+    
+    @media (prefers-reduced-motion: no-preference) {
+      html {
+        scroll-behavior: smooth;
+      }
+    }
+    
+    .gradient-text {
+      background: linear-gradient(135deg, #0369A1 0%, #06B6D4 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    
+    .glass {
+      background: rgba(255, 255, 255, 0.9);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+    }
+    
+    .focus-visible-ring:focus-visible {
+      outline: 2px solid #0369A1;
+      outline-offset: 2px;
+    }
+    
+    .prose h2 {
+      color: #0F172A;
+      font-weight: 700;
+      font-size: 1.5rem;
+      margin-top: 2rem;
+      margin-bottom: 1rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 2px solid #E2E8F0;
+    }
+    
+    .prose h3 {
+      color: #334155;
+      font-weight: 600;
+      font-size: 1.25rem;
+      margin-top: 1.5rem;
+      margin-bottom: 0.75rem;
+    }
+    
+    .prose p {
+      color: #64748B;
+      line-height: 1.75;
+      margin-bottom: 1rem;
+    }
+    
+    .prose ul, .prose ol {
+      padding-left: 1.5rem;
+      margin-bottom: 1rem;
+    }
+    
+    .prose ul {
+      list-style-type: disc;
+    }
+    
+    .prose ol {
+      list-style-type: decimal;
+    }
+    
+    .prose li {
+      color: #64748B;
+      margin-bottom: 0.5rem;
+      line-height: 1.6;
+    }
+    
+    .prose strong {
+      color: #0F172A;
+      font-weight: 600;
+    }
+    
+    .prose .highlight-box {
+      background: #FEF3C7;
+      border-left: 4px solid #F59E0B;
+      padding: 1rem 1.5rem;
+      border-radius: 0 0.5rem 0.5rem 0;
+      margin: 1.5rem 0;
+    }
+    
+    .prose .highlight-box p {
+      color: #92400E;
+      margin-bottom: 0;
+    }
+  </style>
+</head>
+<body class="bg-surface text-text font-jakarta antialiased">
+  
+  <!-- Navigation -->
+  <nav class="fixed top-4 left-4 right-4 z-50 glass rounded-2xl shadow-lg">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16">
+        <!-- Logo -->
+        <a href="index.html" class="flex items-center gap-2 cursor-pointer focus-visible-ring rounded-lg p-1" aria-label="EZpage Home">
+          <div class="w-10 h-10 bg-gradient-to-br from-cta to-accent rounded-xl flex items-center justify-center">
+            <span class="text-white font-bold text-lg">EZ</span>
+          </div>
+          <span class="text-xl font-bold text-primary">EZpage</span>
+        </a>
+        
+        <!-- Desktop Menu -->
+        <div class="hidden md:flex items-center gap-8">
+          <a href="index.html#services" class="text-secondary hover:text-cta transition-colors duration-200 cursor-pointer focus-visible-ring rounded px-2 py-1" data-i18n="nav.services">Dịch vụ</a>
+          <a href="index.html#portfolio" class="text-secondary hover:text-cta transition-colors duration-200 cursor-pointer focus-visible-ring rounded px-2 py-1" data-i18n="nav.portfolio">Dự án</a>
+          <a href="index.html#clients" class="text-secondary hover:text-cta transition-colors duration-200 cursor-pointer focus-visible-ring rounded px-2 py-1" data-i18n="nav.clients">Khách hàng</a>
+          <a href="index.html#contact" class="text-secondary hover:text-cta transition-colors duration-200 cursor-pointer focus-visible-ring rounded px-2 py-1" data-i18n="nav.contact">Liên hệ</a>
+        </div>
+        
+        <!-- Right Section -->
+        <div class="flex items-center gap-4">
+          <!-- Language Switcher -->
+          <div class="flex items-center bg-surface-dark rounded-lg p-1">
+            <button 
+              id="lang-vi" 
+              class="px-3 py-1 rounded-md text-sm font-medium transition-all duration-200 cursor-pointer focus-visible-ring bg-white text-primary shadow-sm"
+              onclick="switchLanguage('vi')"
+              aria-label="Tiếng Việt"
+            >
+              VI
+            </button>
+            <button 
+              id="lang-en" 
+              class="px-3 py-1 rounded-md text-sm font-medium transition-all duration-200 cursor-pointer focus-visible-ring text-text-muted hover:text-primary"
+              onclick="switchLanguage('en')"
+              aria-label="English"
+            >
+              EN
+            </button>
+          </div>
+          
+          <!-- CTA Button -->
+          <a href="index.html#contact" class="hidden sm:flex items-center gap-2 bg-gradient-to-r from-cta to-accent text-white px-5 py-2.5 rounded-xl font-semibold hover:shadow-lg hover:shadow-cta/25 transition-all duration-200 cursor-pointer focus-visible-ring">
+            <span data-i18n="nav.cta">Bắt đầu</span>
+            <i data-lucide="arrow-right" class="w-4 h-4"></i>
+          </a>
+          
+          <!-- Mobile Menu Button -->
+          <button id="mobile-menu-btn" class="md:hidden p-2 rounded-lg hover:bg-surface-dark transition-colors duration-200 cursor-pointer focus-visible-ring" aria-label="Menu">
+            <i data-lucide="menu" class="w-6 h-6 text-primary"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="hidden md:hidden border-t border-surface-dark">
+      <div class="px-4 py-4 space-y-3">
+        <a href="index.html#services" class="block px-4 py-2 rounded-lg text-secondary hover:bg-surface-dark hover:text-cta transition-colors duration-200 cursor-pointer" data-i18n="nav.services">Dịch vụ</a>
+        <a href="index.html#portfolio" class="block px-4 py-2 rounded-lg text-secondary hover:bg-surface-dark hover:text-cta transition-colors duration-200 cursor-pointer" data-i18n="nav.portfolio">Dự án</a>
+        <a href="index.html#clients" class="block px-4 py-2 rounded-lg text-secondary hover:bg-surface-dark hover:text-cta transition-colors duration-200 cursor-pointer" data-i18n="nav.clients">Khách hàng</a>
+        <a href="index.html#contact" class="block px-4 py-2 rounded-lg text-secondary hover:bg-surface-dark hover:text-cta transition-colors duration-200 cursor-pointer" data-i18n="nav.contact">Liên hệ</a>
+      </div>
+    </div>
+  </nav>
+  
+  <!-- Hero Section -->
+  <section class="pt-32 pb-12 px-4 bg-gradient-to-br from-primary/5 to-secondary/5">
+    <div class="max-w-4xl mx-auto text-center">
+      <div class="inline-flex items-center gap-2 bg-white px-4 py-2 rounded-full shadow-md mb-6">
+        <i data-lucide="file-text" class="w-5 h-5 text-cta"></i>
+        <span class="text-sm font-medium text-secondary" data-i18n="terms.badge">Điều khoản pháp lý</span>
+      </div>
+      <h1 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-primary mb-4" data-i18n="terms.title">Điều khoản sử dụng</h1>
+      <p class="text-text-muted text-lg max-w-2xl mx-auto" data-i18n="terms.subtitle">Các quy định khi sử dụng dịch vụ thiết kế và phát triển web của EZpage</p>
+      <p class="text-sm text-text-muted mt-4" data-i18n="terms.lastUpdate">Cập nhật lần cuối: 19/01/2026</p>
+    </div>
+  </section>
+  
+  <!-- Content Section -->
+  <section class="py-16 px-4">
+    <div class="max-w-4xl mx-auto">
+      <div class="bg-white rounded-2xl shadow-lg p-8 md:p-12">
+        
+        <!-- Table of Contents -->
+        <div class="bg-surface rounded-xl p-6 mb-8">
+          <h2 class="text-lg font-semibold text-primary mb-4 flex items-center gap-2">
+            <i data-lucide="list" class="w-5 h-5 text-cta"></i>
+            <span data-i18n="terms.toc">Mục lục</span>
+          </h2>
+          <ul class="space-y-2">
+            <li><a href="#acceptance" class="text-cta hover:underline cursor-pointer" data-i18n="terms.toc.1">1. Chấp nhận điều khoản</a></li>
+            <li><a href="#services" class="text-cta hover:underline cursor-pointer" data-i18n="terms.toc.2">2. Mô tả dịch vụ</a></li>
+            <li><a href="#user-obligations" class="text-cta hover:underline cursor-pointer" data-i18n="terms.toc.3">3. Nghĩa vụ của khách hàng</a></li>
+            <li><a href="#payment" class="text-cta hover:underline cursor-pointer" data-i18n="terms.toc.4">4. Thanh toán và giá cả</a></li>
+            <li><a href="#intellectual-property" class="text-cta hover:underline cursor-pointer" data-i18n="terms.toc.5">5. Quyền sở hữu trí tuệ</a></li>
+            <li><a href="#warranty" class="text-cta hover:underline cursor-pointer" data-i18n="terms.toc.6">6. Bảo hành và hỗ trợ</a></li>
+            <li><a href="#liability" class="text-cta hover:underline cursor-pointer" data-i18n="terms.toc.7">7. Giới hạn trách nhiệm</a></li>
+            <li><a href="#termination" class="text-cta hover:underline cursor-pointer" data-i18n="terms.toc.8">8. Chấm dứt hợp đồng</a></li>
+            <li><a href="#changes" class="text-cta hover:underline cursor-pointer" data-i18n="terms.toc.9">9. Thay đổi điều khoản</a></li>
+            <li><a href="#contact" class="text-cta hover:underline cursor-pointer" data-i18n="terms.toc.10">10. Liên hệ</a></li>
+          </ul>
+        </div>
+        
+        <!-- Vietnamese Content -->
+        <div class="prose max-w-none" id="terms-content-vi">
+          <section id="acceptance">
+            <h2>1. Chấp nhận điều khoản</h2>
+            <p>Bằng việc truy cập và sử dụng website cũng như dịch vụ của EZpage, bạn đồng ý tuân thủ và chịu ràng buộc bởi các điều khoản và điều kiện được nêu trong tài liệu này.</p>
+            <div class="highlight-box">
+              <p><strong>Lưu ý quan trọng:</strong> Nếu bạn không đồng ý với bất kỳ điều khoản nào, vui lòng không sử dụng dịch vụ của chúng tôi.</p>
+            </div>
+            <p>Các điều khoản này áp dụng cho tất cả khách hàng, đối tác và người truy cập website của EZpage.</p>
+          </section>
+          
+          <section id="services">
+            <h2>2. Mô tả dịch vụ</h2>
+            <p>EZpage cung cấp các dịch vụ thiết kế và phát triển web chuyên nghiệp, bao gồm:</p>
+            <ul>
+              <li><strong>Thiết kế UI/UX:</strong> Thiết kế giao diện người dùng và trải nghiệm người dùng</li>
+              <li><strong>Phát triển Website:</strong> Xây dựng website tùy chỉnh theo yêu cầu</li>
+              <li><strong>E-commerce:</strong> Giải pháp thương mại điện tử</li>
+              <li><strong>SEO & Marketing:</strong> Tối ưu công cụ tìm kiếm và tiếp thị số</li>
+              <li><strong>Bảo trì & Hỗ trợ:</strong> Dịch vụ bảo trì và hỗ trợ kỹ thuật</li>
+            </ul>
+            <p>Phạm vi cụ thể của mỗi dự án sẽ được thỏa thuận riêng trong hợp đồng hoặc báo giá.</p>
+          </section>
+          
+          <section id="user-obligations">
+            <h2>3. Nghĩa vụ của khách hàng</h2>
+            <p>Khi sử dụng dịch vụ của EZpage, khách hàng có trách nhiệm:</p>
+            <ol>
+              <li><strong>Cung cấp thông tin chính xác:</strong> Cung cấp đầy đủ và chính xác thông tin cần thiết cho dự án</li>
+              <li><strong>Phản hồi kịp thời:</strong> Trả lời các yêu cầu và câu hỏi trong thời gian hợp lý</li>
+              <li><strong>Tuân thủ pháp luật:</strong> Đảm bảo nội dung và hoạt động không vi phạm pháp luật</li>
+              <li><strong>Bảo mật thông tin:</strong> Giữ bí mật thông tin đăng nhập và mật khẩu</li>
+              <li><strong>Thanh toán đúng hạn:</strong> Thực hiện thanh toán theo thỏa thuận</li>
+            </ol>
+            
+            <h3>3.1. Nội dung bị cấm</h3>
+            <p>Khách hàng không được yêu cầu EZpage tạo hoặc đăng tải:</p>
+            <ul>
+              <li>Nội dung vi phạm pháp luật Việt Nam</li>
+              <li>Nội dung xâm phạm quyền sở hữu trí tuệ của bên thứ ba</li>
+              <li>Nội dung khiêu dâm, bạo lực, hoặc phân biệt đối xử</li>
+              <li>Phần mềm độc hại hoặc mã nguồn gây hại</li>
+              <li>Thông tin sai lệch hoặc lừa đảo</li>
+            </ul>
+          </section>
+          
+          <section id="payment">
+            <h2>4. Thanh toán và giá cả</h2>
+            <h3>4.1. Báo giá</h3>
+            <p>Tất cả báo giá có hiệu lực trong vòng 30 ngày kể từ ngày phát hành, trừ khi có thỏa thuận khác. Giá có thể thay đổi nếu phạm vi công việc thay đổi.</p>
+            
+            <h3>4.2. Lịch thanh toán</h3>
+            <ul>
+              <li><strong>Tạm ứng:</strong> 30-50% giá trị hợp đồng khi ký kết</li>
+              <li><strong>Giai đoạn 2:</strong> 30-40% khi hoàn thành giai đoạn thiết kế</li>
+              <li><strong>Thanh toán cuối:</strong> Số còn lại khi bàn giao dự án</li>
+            </ul>
+            
+            <h3>4.3. Phương thức thanh toán</h3>
+            <p>Chúng tôi chấp nhận thanh toán qua:</p>
+            <ul>
+              <li>Chuyển khoản ngân hàng</li>
+              <li>Ví điện tử (MoMo, ZaloPay, VNPay)</li>
+              <li>Tiền mặt (tại văn phòng)</li>
+            </ul>
+            
+            <div class="highlight-box">
+              <p><strong>Chính sách thanh toán trễ:</strong> Thanh toán trễ quá 15 ngày có thể phát sinh phí phạt 1.5%/tháng và dự án có thể bị tạm dừng.</p>
+            </div>
+          </section>
+          
+          <section id="intellectual-property">
+            <h2>5. Quyền sở hữu trí tuệ</h2>
+            <h3>5.1. Quyền của EZpage</h3>
+            <p>EZpage giữ quyền sở hữu đối với:</p>
+            <ul>
+              <li>Các công cụ, framework, và thư viện code được phát triển nội bộ</li>
+              <li>Phương pháp luận và quy trình làm việc</li>
+              <li>Thiết kế mẫu và template chưa được tùy chỉnh</li>
+            </ul>
+            
+            <h3>5.2. Quyền của khách hàng</h3>
+            <p>Sau khi thanh toán đầy đủ, khách hàng sở hữu:</p>
+            <ul>
+              <li>Toàn bộ thiết kế tùy chỉnh được tạo riêng cho dự án</li>
+              <li>Mã nguồn website (trừ các component bên thứ ba có license riêng)</li>
+              <li>Nội dung và hình ảnh do khách hàng cung cấp</li>
+            </ul>
+            
+            <h3>5.3. Quyền giới thiệu (Portfolio)</h3>
+            <p>EZpage có quyền sử dụng hình ảnh và mô tả dự án trong portfolio và tài liệu marketing, trừ khi có thỏa thuận bảo mật riêng.</p>
+          </section>
+          
+          <section id="warranty">
+            <h2>6. Bảo hành và hỗ trợ</h2>
+            <h3>6.1. Thời gian bảo hành</h3>
+            <p>EZpage cung cấp bảo hành miễn phí trong vòng <strong>3 tháng</strong> kể từ ngày bàn giao, bao gồm:</p>
+            <ul>
+              <li>Sửa lỗi kỹ thuật do EZpage gây ra</li>
+              <li>Điều chỉnh nhỏ về giao diện</li>
+              <li>Hỗ trợ cấu hình và cài đặt</li>
+            </ul>
+            
+            <h3>6.2. Không áp dụng bảo hành</h3>
+            <ul>
+              <li>Lỗi do khách hàng hoặc bên thứ ba chỉnh sửa code</li>
+              <li>Lỗi do hosting hoặc server của khách hàng</li>
+              <li>Yêu cầu thay đổi ngoài phạm vi ban đầu</li>
+              <li>Lỗi do plugin/theme bên thứ ba không tương thích</li>
+            </ul>
+            
+            <h3>6.3. Hỗ trợ sau bảo hành</h3>
+            <p>Sau thời gian bảo hành, khách hàng có thể mua gói hỗ trợ & bảo trì hàng tháng theo bảng giá hiện hành.</p>
+          </section>
+          
+          <section id="liability">
+            <h2>7. Giới hạn trách nhiệm</h2>
+            <p>EZpage cam kết cung cấp dịch vụ chất lượng cao. Tuy nhiên:</p>
+            <ul>
+              <li>EZpage không chịu trách nhiệm về thiệt hại gián tiếp, bao gồm mất doanh thu, mất dữ liệu, hoặc gián đoạn kinh doanh</li>
+              <li>Trách nhiệm tối đa của EZpage không vượt quá tổng giá trị hợp đồng đã thanh toán</li>
+              <li>EZpage không chịu trách nhiệm về nội dung do khách hàng cung cấp</li>
+              <li>EZpage không đảm bảo kết quả kinh doanh hoặc thứ hạng SEO cụ thể</li>
+            </ul>
+          </section>
+          
+          <section id="termination">
+            <h2>8. Chấm dứt hợp đồng</h2>
+            <h3>8.1. Chấm dứt bởi khách hàng</h3>
+            <p>Khách hàng có thể hủy dự án với điều kiện:</p>
+            <ul>
+              <li>Thông báo bằng văn bản trước 14 ngày</li>
+              <li>Thanh toán cho phần công việc đã hoàn thành</li>
+              <li>Không hoàn lại tiền đặt cọc</li>
+            </ul>
+            
+            <h3>8.2. Chấm dứt bởi EZpage</h3>
+            <p>EZpage có quyền chấm dứt hợp đồng nếu:</p>
+            <ul>
+              <li>Khách hàng vi phạm điều khoản sử dụng</li>
+              <li>Thanh toán trễ quá 30 ngày</li>
+              <li>Khách hàng không hợp tác hoặc không phản hồi quá 30 ngày</li>
+              <li>Yêu cầu dự án vi phạm pháp luật</li>
+            </ul>
+          </section>
+          
+          <section id="changes">
+            <h2>9. Thay đổi điều khoản</h2>
+            <p>EZpage có quyền cập nhật các điều khoản này theo thời gian. Thay đổi sẽ có hiệu lực sau khi được đăng tải trên website.</p>
+            <p>Đối với các dự án đang thực hiện, điều khoản tại thời điểm ký hợp đồng sẽ được áp dụng, trừ khi hai bên có thỏa thuận khác.</p>
+          </section>
+          
+          <section id="contact">
+            <h2>10. Liên hệ</h2>
+            <p>Nếu bạn có câu hỏi về các điều khoản này, vui lòng liên hệ:</p>
+            <ul>
+              <li><strong>Email:</strong> legal@ezpage.vn</li>
+              <li><strong>Điện thoại:</strong> +84 901 234 567</li>
+              <li><strong>Địa chỉ:</strong> 123 Nguyễn Huệ, Quận 1, TP. Hồ Chí Minh</li>
+            </ul>
+            <p>Các điều khoản này được điều chỉnh bởi pháp luật Việt Nam. Mọi tranh chấp sẽ được giải quyết tại Tòa án có thẩm quyền tại TP. Hồ Chí Minh.</p>
+          </section>
+        </div>
+        
+        <!-- English Content (hidden by default) -->
+        <div class="prose max-w-none hidden" id="terms-content-en">
+          <section id="acceptance">
+            <h2>1. Acceptance of Terms</h2>
+            <p>By accessing and using the EZpage website and services, you agree to comply with and be bound by the terms and conditions set forth in this document.</p>
+            <div class="highlight-box">
+              <p><strong>Important Notice:</strong> If you do not agree with any of these terms, please do not use our services.</p>
+            </div>
+            <p>These terms apply to all customers, partners, and visitors of the EZpage website.</p>
+          </section>
+          
+          <section id="services">
+            <h2>2. Description of Services</h2>
+            <p>EZpage provides professional web design and development services, including:</p>
+            <ul>
+              <li><strong>UI/UX Design:</strong> User interface and user experience design</li>
+              <li><strong>Website Development:</strong> Custom website development</li>
+              <li><strong>E-commerce:</strong> E-commerce solutions</li>
+              <li><strong>SEO & Marketing:</strong> Search engine optimization and digital marketing</li>
+              <li><strong>Maintenance & Support:</strong> Technical maintenance and support services</li>
+            </ul>
+            <p>The specific scope of each project will be agreed upon separately in the contract or quotation.</p>
+          </section>
+          
+          <section id="user-obligations">
+            <h2>3. Customer Obligations</h2>
+            <p>When using EZpage services, customers are responsible for:</p>
+            <ol>
+              <li><strong>Providing accurate information:</strong> Providing complete and accurate information necessary for the project</li>
+              <li><strong>Timely response:</strong> Responding to requests and questions within a reasonable time</li>
+              <li><strong>Legal compliance:</strong> Ensuring content and activities do not violate the law</li>
+              <li><strong>Information security:</strong> Keeping login credentials and passwords confidential</li>
+              <li><strong>Timely payment:</strong> Making payments as agreed</li>
+            </ol>
+            
+            <h3>3.1. Prohibited Content</h3>
+            <p>Customers may not request EZpage to create or upload:</p>
+            <ul>
+              <li>Content that violates Vietnamese law</li>
+              <li>Content that infringes third-party intellectual property rights</li>
+              <li>Pornographic, violent, or discriminatory content</li>
+              <li>Malware or harmful code</li>
+              <li>False or fraudulent information</li>
+            </ul>
+          </section>
+          
+          <section id="payment">
+            <h2>4. Payment and Pricing</h2>
+            <h3>4.1. Quotations</h3>
+            <p>All quotations are valid for 30 days from the date of issue, unless otherwise agreed. Prices may change if the scope of work changes.</p>
+            
+            <h3>4.2. Payment Schedule</h3>
+            <ul>
+              <li><strong>Deposit:</strong> 30-50% of contract value upon signing</li>
+              <li><strong>Phase 2:</strong> 30-40% upon completion of design phase</li>
+              <li><strong>Final payment:</strong> Remaining balance upon project delivery</li>
+            </ul>
+            
+            <h3>4.3. Payment Methods</h3>
+            <p>We accept payments via:</p>
+            <ul>
+              <li>Bank transfer</li>
+              <li>E-wallets (MoMo, ZaloPay, VNPay)</li>
+              <li>Cash (at office)</li>
+            </ul>
+            
+            <div class="highlight-box">
+              <p><strong>Late Payment Policy:</strong> Payments overdue by more than 15 days may incur a penalty fee of 1.5%/month and the project may be suspended.</p>
+            </div>
+          </section>
+          
+          <section id="intellectual-property">
+            <h2>5. Intellectual Property Rights</h2>
+            <h3>5.1. EZpage Rights</h3>
+            <p>EZpage retains ownership of:</p>
+            <ul>
+              <li>Internally developed tools, frameworks, and code libraries</li>
+              <li>Methodologies and work processes</li>
+              <li>Design templates and non-customized templates</li>
+            </ul>
+            
+            <h3>5.2. Customer Rights</h3>
+            <p>Upon full payment, the customer owns:</p>
+            <ul>
+              <li>All custom designs created specifically for the project</li>
+              <li>Website source code (except third-party components with separate licenses)</li>
+              <li>Content and images provided by the customer</li>
+            </ul>
+            
+            <h3>5.3. Portfolio Rights</h3>
+            <p>EZpage has the right to use project images and descriptions in portfolio and marketing materials, unless there is a separate confidentiality agreement.</p>
+          </section>
+          
+          <section id="warranty">
+            <h2>6. Warranty and Support</h2>
+            <h3>6.1. Warranty Period</h3>
+            <p>EZpage provides free warranty for <strong>3 months</strong> from the delivery date, including:</p>
+            <ul>
+              <li>Fixing technical bugs caused by EZpage</li>
+              <li>Minor interface adjustments</li>
+              <li>Configuration and setup support</li>
+            </ul>
+            
+            <h3>6.2. Warranty Exclusions</h3>
+            <ul>
+              <li>Errors caused by customer or third-party code modifications</li>
+              <li>Errors due to customer's hosting or server</li>
+              <li>Change requests outside the original scope</li>
+              <li>Errors due to incompatible third-party plugins/themes</li>
+            </ul>
+            
+            <h3>6.3. Post-Warranty Support</h3>
+            <p>After the warranty period, customers can purchase monthly support & maintenance packages at current rates.</p>
+          </section>
+          
+          <section id="liability">
+            <h2>7. Limitation of Liability</h2>
+            <p>EZpage commits to providing high-quality services. However:</p>
+            <ul>
+              <li>EZpage is not liable for indirect damages, including lost revenue, lost data, or business interruption</li>
+              <li>EZpage's maximum liability shall not exceed the total contract value paid</li>
+              <li>EZpage is not responsible for content provided by the customer</li>
+              <li>EZpage does not guarantee specific business results or SEO rankings</li>
+            </ul>
+          </section>
+          
+          <section id="termination">
+            <h2>8. Contract Termination</h2>
+            <h3>8.1. Termination by Customer</h3>
+            <p>Customers may cancel the project provided that:</p>
+            <ul>
+              <li>Written notice is given 14 days in advance</li>
+              <li>Payment is made for work completed</li>
+              <li>Deposit is non-refundable</li>
+            </ul>
+            
+            <h3>8.2. Termination by EZpage</h3>
+            <p>EZpage may terminate the contract if:</p>
+            <ul>
+              <li>Customer violates terms of service</li>
+              <li>Payment is overdue by more than 30 days</li>
+              <li>Customer fails to cooperate or respond for more than 30 days</li>
+              <li>Project requirements violate the law</li>
+            </ul>
+          </section>
+          
+          <section id="changes">
+            <h2>9. Changes to Terms</h2>
+            <p>EZpage reserves the right to update these terms from time to time. Changes will take effect upon posting on the website.</p>
+            <p>For ongoing projects, the terms at the time of contract signing will apply, unless otherwise agreed by both parties.</p>
+          </section>
+          
+          <section id="contact">
+            <h2>10. Contact Us</h2>
+            <p>If you have questions about these terms, please contact:</p>
+            <ul>
+              <li><strong>Email:</strong> legal@ezpage.vn</li>
+              <li><strong>Phone:</strong> +84 901 234 567</li>
+              <li><strong>Address:</strong> 123 Nguyen Hue, District 1, Ho Chi Minh City</li>
+            </ul>
+            <p>These terms are governed by Vietnamese law. Any disputes will be resolved at the competent court in Ho Chi Minh City.</p>
+          </section>
+        </div>
+        
+      </div>
+    </div>
+  </section>
+  
+  <!-- Footer -->
+  <footer class="bg-primary text-white py-12 px-4">
+    <div class="max-w-7xl mx-auto">
+      <div class="flex flex-col md:flex-row justify-between items-center gap-6">
+        <!-- Logo -->
+        <div class="flex items-center gap-2">
+          <div class="w-10 h-10 bg-gradient-to-br from-cta to-accent rounded-xl flex items-center justify-center">
+            <span class="text-white font-bold text-lg">EZ</span>
+          </div>
+          <span class="text-xl font-bold">EZpage</span>
+        </div>
+        
+        <!-- Links -->
+        <div class="flex flex-wrap justify-center gap-6">
+          <a href="index.html" class="text-white/70 hover:text-white transition-colors duration-200 cursor-pointer" data-i18n="footer.home">Trang chủ</a>
+          <a href="privacy-policy.html" class="text-white/70 hover:text-white transition-colors duration-200 cursor-pointer" data-i18n="footer.privacy">Chính sách bảo mật</a>
+          <a href="terms-of-service.html" class="text-white transition-colors duration-200 cursor-pointer" data-i18n="footer.terms">Điều khoản sử dụng</a>
+        </div>
+        
+        <!-- Copyright -->
+        <p class="text-white/50 text-sm" data-i18n="footer.copyright">© 2026 EZpage. Tất cả quyền được bảo lưu.</p>
+      </div>
+    </div>
+  </footer>
+  
+  <script>
+    // Initialize Lucide icons
+    lucide.createIcons();
+    
+    // Language translations
+    const translations = {
+      vi: {
+        'nav.services': 'Dịch vụ',
+        'nav.portfolio': 'Dự án',
+        'nav.clients': 'Khách hàng',
+        'nav.contact': 'Liên hệ',
+        'nav.cta': 'Bắt đầu',
+        'terms.badge': 'Điều khoản pháp lý',
+        'terms.title': 'Điều khoản sử dụng',
+        'terms.subtitle': 'Các quy định khi sử dụng dịch vụ thiết kế và phát triển web của EZpage',
+        'terms.lastUpdate': 'Cập nhật lần cuối: 19/01/2026',
+        'terms.toc': 'Mục lục',
+        'terms.toc.1': '1. Chấp nhận điều khoản',
+        'terms.toc.2': '2. Mô tả dịch vụ',
+        'terms.toc.3': '3. Nghĩa vụ của khách hàng',
+        'terms.toc.4': '4. Thanh toán và giá cả',
+        'terms.toc.5': '5. Quyền sở hữu trí tuệ',
+        'terms.toc.6': '6. Bảo hành và hỗ trợ',
+        'terms.toc.7': '7. Giới hạn trách nhiệm',
+        'terms.toc.8': '8. Chấm dứt hợp đồng',
+        'terms.toc.9': '9. Thay đổi điều khoản',
+        'terms.toc.10': '10. Liên hệ',
+        'footer.home': 'Trang chủ',
+        'footer.privacy': 'Chính sách bảo mật',
+        'footer.terms': 'Điều khoản sử dụng',
+        'footer.copyright': '© 2026 EZpage. Tất cả quyền được bảo lưu.',
+      },
+      en: {
+        'nav.services': 'Services',
+        'nav.portfolio': 'Portfolio',
+        'nav.clients': 'Clients',
+        'nav.contact': 'Contact',
+        'nav.cta': 'Get Started',
+        'terms.badge': 'Legal Terms',
+        'terms.title': 'Terms of Service',
+        'terms.subtitle': 'Regulations for using EZpage web design and development services',
+        'terms.lastUpdate': 'Last updated: January 19, 2026',
+        'terms.toc': 'Table of Contents',
+        'terms.toc.1': '1. Acceptance of Terms',
+        'terms.toc.2': '2. Description of Services',
+        'terms.toc.3': '3. Customer Obligations',
+        'terms.toc.4': '4. Payment and Pricing',
+        'terms.toc.5': '5. Intellectual Property Rights',
+        'terms.toc.6': '6. Warranty and Support',
+        'terms.toc.7': '7. Limitation of Liability',
+        'terms.toc.8': '8. Contract Termination',
+        'terms.toc.9': '9. Changes to Terms',
+        'terms.toc.10': '10. Contact Us',
+        'footer.home': 'Home',
+        'footer.privacy': 'Privacy Policy',
+        'footer.terms': 'Terms of Service',
+        'footer.copyright': '© 2026 EZpage. All rights reserved.',
+      }
+    };
+    
+    let currentLang = 'vi';
+    
+    function switchLanguage(lang) {
+      currentLang = lang;
+      document.documentElement.setAttribute('data-lang', lang);
+      document.documentElement.setAttribute('lang', lang);
+      
+      // Update button styles
+      const viBtn = document.getElementById('lang-vi');
+      const enBtn = document.getElementById('lang-en');
+      
+      if (lang === 'vi') {
+        viBtn.classList.add('bg-white', 'text-primary', 'shadow-sm');
+        viBtn.classList.remove('text-text-muted', 'hover:text-primary');
+        enBtn.classList.remove('bg-white', 'text-primary', 'shadow-sm');
+        enBtn.classList.add('text-text-muted', 'hover:text-primary');
+        document.getElementById('terms-content-vi').classList.remove('hidden');
+        document.getElementById('terms-content-en').classList.add('hidden');
+        document.title = 'Điều khoản sử dụng - EZpage';
+      } else {
+        enBtn.classList.add('bg-white', 'text-primary', 'shadow-sm');
+        enBtn.classList.remove('text-text-muted', 'hover:text-primary');
+        viBtn.classList.remove('bg-white', 'text-primary', 'shadow-sm');
+        viBtn.classList.add('text-text-muted', 'hover:text-primary');
+        document.getElementById('terms-content-vi').classList.add('hidden');
+        document.getElementById('terms-content-en').classList.remove('hidden');
+        document.title = 'Terms of Service - EZpage';
+      }
+      
+      // Update translatable elements
+      document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        if (translations[lang][key]) {
+          el.textContent = translations[lang][key];
+        }
+      });
+    }
+    
+    // Mobile menu toggle
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    
+    mobileMenuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+    
+    // Close mobile menu when clicking a link
+    mobileMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.add('hidden');
+      });
+    });
+  </script>
+</body>
+</html>
